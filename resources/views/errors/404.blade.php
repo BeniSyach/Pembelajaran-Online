@@ -1005,8 +1005,8 @@
                 </filter>
             </defs>
         </svg>
-        <p style="text-align: center; margin-top: -20px;">Error Internet Illustration by <a
-                href="https://storyset.com/internet" target="_blank">Storyset</a></p>
+        {{-- <p style="text-align: center; margin-top: -20px;">Error Internet Illustration by <a
+                href="https://storyset.com/internet" target="_blank">Storyset</a></p> --}}
     </div>
 </body>
 
