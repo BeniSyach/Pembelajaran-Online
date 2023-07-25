@@ -3,8 +3,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="E - MesraMedia  dibuat ditujukan agar para siswa dan guru dapat terus belajar dan mengajar dimana saja dan kapan saja." name="Description" />
-    <meta content="E - MesraMedia , E-learning, Open Source, github, programmer indonesia" name="keywords" />
-    <link rel="icon" href="{{ asset('assets/img/favicon.png') }}" type="image/png">
+    <meta content="E - MesraMedia , E-learning" name="keywords" />
+    {{-- <link rel="icon" href="{{ asset('assets/img/favicon.png') }}" type="image/png"> --}}
     <title>E - MesraMedia  - Belajar Dimana Saja & Kapan Saja !</title>
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">

@@ -2152,3 +2152,299 @@
 [stacktrace]
 #0 {main}
 "} 
+[2023-07-25 10:01:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:02:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:03:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:04:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:05:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:06:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:07:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:08:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:09:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:10:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:11:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:12:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:13:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:14:16] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:15:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:16:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:17:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:18:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:19:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:20:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:21:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:22:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:23:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:24:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:25:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:26:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:27:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:28:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:29:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:30:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:31:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:32:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:33:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:34:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:35:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:36:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:37:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:38:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:39:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:40:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:41:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:42:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:43:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:44:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:45:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:46:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:47:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:48:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:49:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:50:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:51:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:52:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:53:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:54:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:55:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:56:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:57:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:58:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 10:59:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:00:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:01:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:02:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:03:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:04:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:05:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:06:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:07:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:08:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:09:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:10:05] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:40:46] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:41:45] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:42:45] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-07-25 11:43:45] local.ERROR: Cannot redeclare check_kelas() (previously declared in E:\Project\Pembelajaran Online\app\helpers.php:7) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot redeclare check_kelas() (previously declared in E:\\Project\\Pembelajaran Online\\app\\helpers.php:7) at E:\\Project\\Pembelajaran Online\\app\\helpers.php:7)
+[stacktrace]
+#0 {main}
+"} 
