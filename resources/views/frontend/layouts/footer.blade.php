@@ -9,7 +9,6 @@
                         <li><a href="{{ url('welcome/tentang') }}">Tentang</a></li>
                         <li><a href="{{ url('welcome/materi') }}">Materi</a></li>
                         <li><a href="{{ url('welcome/kontak') }}">Kontak</a></li>
-                        <li><a href="http://smkn1ciamis.id/">Website Resmi </a></li>
                     </ul>
                 </div>
             </div>
@@ -54,9 +53,8 @@
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;<script>
                     document.write(new Date().getFullYear());
-                </script> All rights reserved | This template is made with <span class="text-danger"> &#10084;</span> by
-                <a href="https://colorlib.com" target="_blank">Colorlib</a> <br> E - MesraMedia is made with <span class="text-danger"> &#10084;</span> by <a href="https://github.com/syauqi"> </a> with MIT License
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </script>E - MesraMedia | All rights reserved
+                <br>  
             </p>
             <div class="col-lg-4 col-md-4 footer-social">
                 <a href="#"><i class="fa fa-facebook"></i></a>

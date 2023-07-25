@@ -88,7 +88,7 @@
 				<div class="main_title">
 					<h2 data-aos="fade-up" data-aos-duration="2000">E - MesraMedia Dibuat Untuk Meningkatkan Kualitas Pembelajaran Di Indonesia</h2>
 					<p data-aos="fade-up" data-aos-duration="2200">Merciful revaluation burying love ultimate value inexpedient ubermensch. Holiest madness victorious morality hope endless christian madness. Love dead fearful transvaluation marvelous. Oneself right ideal abstract endless faith deceptions zarathustra grandeur law ubermensch free.</p>
-					<a href="https://github.com/syauqi/E - MesraMedia "><button data-aos="fade-up" data-aos-duration="2400" class="bubbly-button">Download E - MesraMedia <span class="lnr lnr-arrow-right"></span></button></a>
+					<a href="#"><button data-aos="fade-up" data-aos-duration="2400" class="bubbly-button">Download Panduan E - MesraMedia <span class="lnr lnr-arrow-right"></span></button></a>
 				</div>
 			</div>
 		</div>
@@ -117,7 +117,7 @@
 								<ul class="list">
 									<li><a href="#"><i class="lnr lnr-users"></i>54</a></li>
 									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i>Guru Matematika SMKN 1 Ciamis</a>
+									<li><a href="#"><i class="lnr lnr-user"></i>Guru Matematika E - MesraMedia</a>
 									</li>
 								</ul>
 							</div>
@@ -134,7 +134,7 @@
 								<ul class="list">
 									<li><a href="#"><i class="lnr lnr-users"></i> 34</a></li>
 									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i> Guru IPA SMKN 1 Ciamis</a></li>
+									<li><a href="#"><i class="lnr lnr-user"></i> Guru IPA E - MesraMedia</a></li>
 								</ul>
 							</div>
 						</div>
@@ -150,7 +150,7 @@
 								<ul class="list">
 									<li><a href="#"><i class="lnr lnr-users"></i> 63</a></li>
 									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i> Guru English SMKN 1 Ciamis</a></li>
+									<li><a href="#"><i class="lnr lnr-user"></i> Guru English E - MesraMedia</a></li>
 								</ul>
 							</div>
 						</div>
@@ -166,7 +166,7 @@
 								<ul class="list">
 									<li><a href="#"><i class="lnr lnr-users"></i> 24</a></li>
 									<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-									<li><a href="#"><i class="lnr lnr-user"></i> Guru Indonesia SMKN 1 Ciamis</a>
+									<li><a href="#"><i class="lnr lnr-user"></i> Guru Indonesia E - MesraMedia</a>
 									</li>
 								</ul>
 							</div>
@@ -185,7 +185,7 @@
 						<ul class="list">
 							<li><a href="#"><i class="lnr lnr-users"></i> 35</a></li>
 							<li><a href="#"><i class="lnr lnr-bubble"></i> 0</a></li>
-							<li><a href="#"><i class="lnr lnr-user"></i> Guru Agama SMKN 1 Ciamis</a></li>
+							<li><a href="#"><i class="lnr lnr-user"></i> Guru Agama E - MesraMedia</a></li>
 						</ul>
 					</div>
 				</div>
@@ -207,8 +207,8 @@
 				<div class="testi_slider owl-carousel">
 					<div class="item">
 						<div class="testi_item">
-							<img src=" {{ asset('assets/img/testimonials/testi-3.png') }}" alt="">
-							<h4>Syauqi Zaidan Khairan Khalaf</h4>
+							<img src=" {{ asset('assets/user-profile/default.png') }}" alt="" width="25%" height="80px">
+							<h4>Beni</h4>
 							<ul class="list">
 								<li><a href="#"><i class="fa fa-star"></i></a></li>
 								<li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -221,8 +221,8 @@
 					</div>
 					<div class="item">
 						<div class="testi_item">
-							<img src=" {{ asset('assets/img/testimonials/testi-2.png') }}" alt="">
-							<h4>Taupik Hidayat</h4>
+							<img src=" {{ asset('assets/user-profile/default.png') }}" alt="" width="25%" height="80px">
+							<h4>Beni Syach</h4>
 							<ul class="list">
 								<li><a href="#"><i class="fa fa-star"></i></a></li>
 								<li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -235,8 +235,8 @@
 					</div>
 					<div class="item">
 						<div class="testi_item">
-							<img src=" {{ asset('assets/img/testimonials/testi-1.png') }}" alt="">
-							<h4>Diki Ramdani</h4>
+							<img src=" {{ asset('assets/user-profile/default.png') }}" alt="" width="25%" height="80px">
+							<h4>beni Ketaren</h4>
 							<ul class="list">
 								<li><a href="#"><i class="fa fa-star"></i></a></li>
 								<li><a href="#"><i class="fa fa-star"></i></a></li>
