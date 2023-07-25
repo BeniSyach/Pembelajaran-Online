@@ -1,7 +1,6 @@
 @extends('frontend.main')
 @section('content_utama')
 
-<!--================Home Banner Area =================-->
 <section class="home_banner_area">
 	<div class="banner_inner d-flex align-items-center">
 		<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="">
@@ -16,9 +15,7 @@
 		</div>
 	</div>
 </section>
-<!-- ================End Home Banner Area ================= -->
 
-<!--================Finance Area =================-->
 <section class="finance_area">
 	<div class="container">
 		<div class="finance_inner row">
@@ -73,9 +70,7 @@
 		</div>
 	</div>
 </section>
-<!--================End Finance Area =================-->
 
-<!--================ Illustrations Area =================-->
 <section class="E - MesraMedia -for-indonesia p_20">
 	<div class="container">
 		<div class="row">
@@ -94,9 +89,7 @@
 		</div>
 	</div>
 </section>
-<!--================End Illustrations Area =================-->
 
-<!--================Courses Area =================-->
 <section class="courses_area p_40">
 	<div class="container">
 		<div class="main_title">
@@ -193,9 +186,7 @@
 		</div>
 	</div>
 </section>
-<!--================End Courses Area =================-->
 
-<!--================Team Area =================-->
 <section class="team_area p_20">
 	<div class="container">
 		<div class="main_title">
@@ -253,9 +244,7 @@
 		</section>
 	</div>
 </section>
-<!--================End Team Area =================-->
 
-<!--================Impress Area =================-->
 <section class="impress_area p_120">
 	<div class="container">
 		<div class="impress_inner text-center">
@@ -266,5 +255,5 @@
 		</div>
 	</div>
 </section>
-<!--================End Impress Area =================-->
+
 @endsection

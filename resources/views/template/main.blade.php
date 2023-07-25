@@ -163,7 +163,6 @@
                                         <div class="media server-log">
                                             <div class="media-body">
                                                 <div class="data-info">
-                                                    <h6 class="">WOoHOO</h6>
                                                     <p class="">Belum ada Pemberitahuan</p>
                                                 </div>
                                             </div>

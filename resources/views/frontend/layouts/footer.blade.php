@@ -6,9 +6,9 @@
                 <div class="single-footer-widget tp_widgets">
                     <h6 class="footer_title">Tentang Kami</h6>
                     <ul class="list">
-                        <li><a href="{{ url('welcome/tentang') }}">Tentang</a></li>
-                        <li><a href="{{ url('welcome/materi') }}">Materi</a></li>
-                        <li><a href="{{ url('welcome/kontak') }}">Kontak</a></li>
+                        <li><a href="{{ url('tentang') }}">Tentang</a></li>
+                        <li><a href="{{ url('materi') }}">Materi</a></li>
+                        <li><a href="{{ url('kontak') }}">Kontak</a></li>
                     </ul>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                     <h6 class="footer_title">Masuk - Sign in</h6>
                     <ul class="list">
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Untuk Siswa</a></li>
-                        <li><a href="{{ url('welcome/guru') }}">Untuk Guru</a></li>
+                        <li><a href="{{ url('/login') }}">Untuk Guru</a></li>
                     </ul>
                 </div>
             </div>
