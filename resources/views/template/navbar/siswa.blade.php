@@ -23,10 +23,18 @@
             <li class="menu menu-heading">
                 <div class="heading">
                     <span data-feather="minus"></span>
-                    <span>KAMPUS MERDEKA</span>
+                    <span>SEKOLAH MERDEKA</span>
                 </div>
             </li>
             <!--Kelompok Belajar-->
+            <li class="menu {{ ($menu['menu'] == 'belajar') ? 'active' : ''; }}">
+                <a href="{{ url("/siswa/belajar") }}" aria-expanded="{{ ($menu['expanded'] == 'belajar') ? 'true' : 'false'; }}" class="dropdown-toggle">
+                    <div class="">
+                        <span data-feather="book-open"></span>
+                        <span>belajar</span>
+                    </div>
+                </a>
+            </li>
             <li class="menu {{ ($menu['menu'] == 'materi') ? 'active' : ''; }}">
                 <a href="{{ url("/siswa/materi") }}" aria-expanded="{{ ($menu['expanded'] == 'materi') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">

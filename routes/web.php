@@ -6,6 +6,7 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelompokBelajarController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BelajarSiswaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\SiswaController;
@@ -180,6 +181,8 @@ Route::get('/siswa/profile', [SiswaController::class, 'profile'])->middleware('i
 Route::post('/siswa/edit_profile/{siswa:id}', [SiswaController::class, 'edit_profile'])->middleware('is_siswa');
 Route::post('/siswa/edit_password/{siswa:id}', [SiswaController::class, 'edit_password'])->middleware('is_siswa');
 
+// ==>belajar
+Route::resource('/siswa/belajar', BelajarSiswaController::class)->middleware('is_siswa');
 // ==>Materi
 Route::resource('/siswa/materi', MateriSiswaController::class)->middleware('is_siswa');
 // ==>Tugas
