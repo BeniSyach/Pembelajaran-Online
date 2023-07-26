@@ -7,6 +7,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelompokBelajarController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KontakController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TugasGuruController;
 use App\Http\Controllers\TugasAdminController;
@@ -36,6 +37,7 @@ use App\Http\Controllers\UjianSiswaController;
 // Route Auth
 // ==>View
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/kontak',[KontakController::class, 'index']);
 
 Route::get('/login', [AuthController::class, 'index']);
 Route::get('/install', [AuthController::class, 'install']);

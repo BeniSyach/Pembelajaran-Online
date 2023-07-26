@@ -44,7 +44,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <h4 class="footer_title">Tentang E - MesraMedia </h4>
                 <p>
-                    Web Edukasi Open Source. E - MesraMedia adalah Web edukasi yang dilengkapi video, materi dan sistem ujian yang tersedia secara . E - MesraMedia dibuat ditujukan agar para siswa dan guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
+                E - MesraMedia adalah Web edukasi yang dilengkapi video, materi dan sistem ujian yang tersedia secara . E - MesraMedia dibuat ditujukan agar para siswa dan guru dapat terus belajar dan mengajar dimana saja dan kapan saja.
                 </p>
             </div>
         </div>

@@ -10,7 +10,7 @@
 				<h3 data-aos="fade-up" data-aos-duration="1600">Belajar Dimana Saja & Kapan Saja <br /> Mudah Dengan E - MesraMedia </h3>
 				<p data-aos="fade-up" data-aos-duration="1900">Dengan E - MesraMedia kemudahan kegiatan belajar mengajar dapat terpenuhi. Para guru dan siswa dapat
 					belajar meski banyak halangan atau rintangan. Nikmati Pembelajaran terstruktur dan efektif menggunakan E - MesraMedia serta kemudahan belajar dengan menggunakan aplikasi kami. </p>
-				<a data-aos="fade-up" data-aos-duration="2000" class="main_btn" href="{{ url('user/registration') }}">Bergabung Sekarang <span class="lnr lnr-arrow-right"></span></a>
+				<a data-aos="fade-up" data-aos-duration="2000" class="main_btn" href="{{ url('/register') }}">Bergabung Sekarang <span class="lnr lnr-arrow-right"></span></a>
 			</div>
 		</div>
 	</div>

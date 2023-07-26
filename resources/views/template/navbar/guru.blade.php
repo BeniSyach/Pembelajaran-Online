@@ -30,7 +30,7 @@
                 <a href="{{ url("/guru/materi") }}" aria-expanded="{{ ($menu['expanded'] == 'materi') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">
                         <span data-feather="book-open"></span>
-                        <span>Materi</span>
+                        <span>RPP & Materi</span>
                     </div>
                 </a>
             </li>
@@ -47,6 +47,14 @@
                     <div class="">
                         <span data-feather="cast"></span>
                         <span>Ujian</span>
+                    </div>
+                </a>
+            </li>
+            <li class="menu {{ ($menu['menu'] == 'rekap_nilai') ? 'active' : ''; }}">
+                <a href="{{ url("/guru/rekap_nilai") }}" aria-expanded="{{ ($menu['expanded'] == 'rekap_nilai') ? 'true' : 'false'; }}" class="dropdown-toggle">
+                    <div class="">
+                        <span data-feather="cast"></span>
+                        <span>Rekap Nilai Siswa</span>
                     </div>
                 </a>
             </li>
