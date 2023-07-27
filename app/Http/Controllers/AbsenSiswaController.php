@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Materi;
+
 use App\Models\Notifikasi;
 use App\Models\Siswa;
 use App\Models\TugasSiswa;
@@ -21,7 +21,7 @@ class AbsenSiswaController extends Controller
             ->where('selesai', null)
             ->get();
 
-        return view('siswa.materi.index', [
+        return view('siswa.absen.index', [
             'title' => 'Absen Siswa',
             'plugin' => '
                 <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/datatables.css">
@@ -34,7 +34,6 @@ class AbsenSiswaController extends Controller
                 'expanded' => 'absen'
             ],
             'siswa' => Siswa::firstWhere('id', session('siswa')->id),
-            'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->get(),
             'notif_tugas' => $notif_tugas,
             'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
             'notif_ujian' => $notif_ujian

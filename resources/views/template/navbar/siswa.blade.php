@@ -43,6 +43,14 @@
                     </div>
                 </a>
             </li>
+            <li class="menu {{ ($menu['menu'] == 'nilai') ? 'active' : ''; }}">
+                <a href="{{ url("/siswa/nilai") }}" aria-expanded="{{ ($menu['expanded'] == 'nilai') ? 'true' : 'false'; }}" class="dropdown-toggle">
+                    <div class="">
+                        <span data-feather="book-open"></span>
+                        <span>Nilai</span>
+                    </div>
+                </a>
+            </li>
             {{-- <li class="menu {{ ($menu['menu'] == 'materi') ? 'active' : ''; }}">
                 <a href="{{ url("/siswa/materi") }}" aria-expanded="{{ ($menu['expanded'] == 'materi') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">
