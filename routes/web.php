@@ -197,3 +197,11 @@ Route::post('/siswa/ragu_essay', [UjianSiswaController::class, 'ragu_essay'])->m
 
 Route::get('/siswa/ujian_essay/{ujian:kode}', [UjianSiswaController::class, 'essay'])->middleware('is_siswa');
 Route::post('/siswa/ujian_essay', [UjianSiswaController::class, 'store_essay'])->middleware('is_siswa');
+
+
+
+Route::get('/siswa/belajar_essay/{belajar:kode}', [BelajarSiswaController::class, 'essay'])->middleware('is_siswa');
+Route::post('/siswa/belajar_essay', [BelajarSiswaController::class, 'store_essay'])->middleware('is_siswa');
+
+Route::post('/siswa/belajar/simpan_pg', [BelajarSiswaController::class, 'simpan_pg'])->middleware('is_siswa');
+Route::post('/siswa/belajar/simpan_essay', [BelajarSiswaController::class, 'simpan_essay'])->middleware('is_siswa');
