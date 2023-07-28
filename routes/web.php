@@ -19,6 +19,7 @@ use App\Http\Controllers\MateriAdminController;
 use App\Http\Controllers\SummernoteController;
 use App\Http\Controllers\TugasSiswaController;
 use App\Http\Controllers\MateriSiswaController;
+use App\Http\Controllers\NilaiSiswaController;
 use App\Http\Controllers\UjianSiswaController;
 
 /*
@@ -207,3 +208,5 @@ Route::post('/siswa/belajar_essay', [BelajarSiswaController::class, 'store_essay
 
 Route::post('/siswa/belajar/simpan_pg', [BelajarSiswaController::class, 'simpan_pg'])->middleware('is_siswa');
 Route::post('/siswa/belajar/simpan_essay', [BelajarSiswaController::class, 'simpan_essay'])->middleware('is_siswa');
+
+Route::get('siswa/nilai',[NilaiSiswaController::class,'index'])->middleware('is_siswa');

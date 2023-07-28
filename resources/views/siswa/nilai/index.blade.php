@@ -9,9 +9,9 @@
                 <div class="col-lg-12 layout-spacing">
                     <div class="widget shadow p-3" style="min-height: 450px;">
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-12">
                                 <div class="widget-heading">
-                                    <h5 class="">Materi</h5>
+                                    <h5 class="">Nilai</h5>
                                 </div>
                                 <div class="table-responsive" style="overflow-x: scroll;">
                                     <table id="datatable-table" class="table text-center text-nowrap">
@@ -20,34 +20,18 @@
                                                 <th>Nis</th>
                                                 <th>Nama</th>
                                                 <th>Kelas</th>
-                                                <th>Opsi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           
                                                 <tr>
                                                     <td>{{ $siswa->nis }}</td>
                                                     <td>{{ $siswa->nama_siswa }}</td>
                                                     <td>{{ $siswa->kelas->nama_kelas }}</td>
-                                                    @if (1==2)
-                                                    <td>
-                                                        <a href="{{ url("/siswa/absen/" . $siswa->id) }}" class="btn btn-primary"><span data-feather="eye"></span> absen</a>
-                                                    </td>
-                                                    @else
-                                                    <td>
-                                                        <a href="#" class="btn btn-light" style="pointer-events: none;
-                                                        cursor: default;"><span data-feather="eye"></span> Sudah Absen</a>
-                                                    </td>
-                                                    @endif
-
                                                 </tr>
                                           
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                            <div class="col-lg-5 d-flex">
-                                <img src="{{ url('assets/img') }}/profile-siswa.svg" class="align-middle" alt="" style="width: 100%;">
                             </div>
                         </div>
                     </div>

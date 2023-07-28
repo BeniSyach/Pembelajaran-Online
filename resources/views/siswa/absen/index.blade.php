@@ -29,7 +29,7 @@
                                                     <td>{{ $siswa->nis }}</td>
                                                     <td>{{ $siswa->nama_siswa }}</td>
                                                     <td>{{ $siswa->kelas->nama_kelas }}</td>
-                                                    @if (1==2)
+                                                    @if (1==1)
                                                     <td>
                                                         <a href="{{ url("/siswa/absen/" . $siswa->id) }}" class="btn btn-primary"><span data-feather="eye"></span> absen</a>
                                                     </td>
