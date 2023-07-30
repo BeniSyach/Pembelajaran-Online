@@ -201,7 +201,7 @@ Route::get('/siswa/ujian_essay/{ujian:kode}', [UjianSiswaController::class, 'ess
 Route::post('/siswa/ujian_essay', [UjianSiswaController::class, 'store_essay'])->middleware('is_siswa');
 
 Route::get('/siswa/absen',[AbsenSiswaController::class,'index'])->middleware('is_siswa');
-Route::post('/siswa/absen',[AbsenSiswaController::class,'store'])->middleware('is_siswa');
+Route::get('/siswa/absen/{id}',[AbsenSiswaController::class,'store'])->middleware('is_siswa');
 
 Route::get('/siswa/belajar_essay/{belajar:kode}', [BelajarSiswaController::class, 'essay'])->middleware('is_siswa');
 Route::post('/siswa/belajar_essay', [BelajarSiswaController::class, 'store_essay'])->middleware('is_siswa');
