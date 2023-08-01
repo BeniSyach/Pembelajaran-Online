@@ -48,6 +48,18 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
+                                            <label for="">Materi</label>
+                                            <select class="form-control" name="materi" id="materi" required>
+                                                <option value="">Pilih</option>
+                                                @foreach ($guru_materi as $gm)
+                                                    <option value="{{ $gm->id }}">{{ $gm->nama_materi }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="col-lg-6">
+                                        <div class="form-group">
                                             <label for="">Waktu Jam</label>
                                             <input type="number" name="jam" class="form-control" value="0"
                                                 required>
@@ -59,7 +71,7 @@
                                             <input type="number" name="menit" class="form-control" value="0"
                                                 required>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

@@ -17,6 +17,7 @@ use App\Models\DetailEssay;
 use App\Models\DetailUjian;
 use App\Models\EmailSettings;
 use App\Models\EssaySiswa;
+use App\Models\KmMateri;
 use App\Models\PgSiswa;
 use App\Models\Siswa;
 use App\Models\WaktuUjian;
@@ -57,7 +58,7 @@ class UjianGuruController extends Controller
     public function create()
     {
         return view('guru.ujian.create', [
-            'title' => 'Tambah Ujian Pilihan Ganda',
+            'title' => 'Tambah Tugas Pilihan Ganda',
             'plugin' => '
                 <link href="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
                 <script src="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.js"></script>
@@ -71,12 +72,13 @@ class UjianGuruController extends Controller
             'guru' => Guru::firstWhere('id', session('guru')->id),
             'guru_kelas' => Gurukelas::where('guru_id', session('guru')->id)->get(),
             'guru_mapel' => Gurumapel::where('guru_id', session('guru')->id)->get(),
+            'guru_materi' => KmMateri::where('guru_id', session('guru')->id)->get(),
         ]);
     }
     public function create_essay()
     {
         return view('guru.ujian.create-essay', [
-            'title' => 'Tambah Ujian Essay',
+            'title' => 'Tambah Tugas Essay',
             'plugin' => '
                 <link href="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
                 <script src="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.js"></script>
@@ -90,6 +92,7 @@ class UjianGuruController extends Controller
             'guru' => Guru::firstWhere('id', session('guru')->id),
             'guru_kelas' => Gurukelas::where('guru_id', session('guru')->id)->get(),
             'guru_mapel' => Gurumapel::where('guru_id', session('guru')->id)->get(),
+            'guru_materi' => KmMateri::where('guru_id', session('guru')->id)->get(),
         ]);
     }
 
@@ -101,6 +104,23 @@ class UjianGuruController extends Controller
      */
     public function store(Request $request)
     {
+
+        $pg_tugas = Ujian::where('materi_id',$request->materi)->where('jenis',0)->get();
+
+        if($pg_tugas->count() == 1)
+        {
+            return redirect('/guru/ujian/create')->with('pesan', "
+                <script>
+                    swal({
+                        title: 'Error!',
+                        text: 'Soal dan Materi Sudah Ada',
+                        type: 'error',
+                        padding: '2em'
+                    })
+                </script>
+            ")->withInput();
+        }
+
         $siswa = Siswa::where('kelas_id', $request->kelas)->get();
         if ($siswa->count() == 0) {
             return redirect('/guru/ujian/create')->with('pesan', "
@@ -123,6 +143,7 @@ class UjianGuruController extends Controller
             'guru_id' => session('guru')->id,
             'kelas_id' => $request->kelas,
             'mapel_id' => $request->mapel,
+            'materi_id' => $request->materi,
             'jam' => $request->jam,
             'menit' => $request->menit,
             'acak' => $request->acak,
@@ -165,7 +186,7 @@ class UjianGuruController extends Controller
             'jam' => $request->jam,
             'menit' => $request->menit,
         ];
-        Mail::to($email_siswa)->send(new NotifUjian($details));
+        // Mail::to($email_siswa)->send(new NotifUjian($details));
 
         Ujian::insert($ujian);
         DetailUjian::insert($detail_ujian);
@@ -175,7 +196,7 @@ class UjianGuruController extends Controller
             <script>
                 swal({
                     title: 'Success!',
-                    text: 'ujian sudah di posting!',
+                    text: 'Tugas sudah di posting!',
                     type: 'success',
                     padding: '2em'
                 })
@@ -184,6 +205,22 @@ class UjianGuruController extends Controller
     }
     public function pg_excel(Request $request)
     {
+        $pg_tugas = Ujian::where('materi_id',$request->e_materi)->where('jenis',0)->get();
+
+        if($pg_tugas->count() == 1)
+        {
+            return redirect('/guru/ujian/create')->with('pesan', "
+                <script>
+                    swal({
+                        title: 'Error!',
+                        text: 'Soal dan Materi Sudah Ada',
+                        type: 'error',
+                        padding: '2em'
+                    })
+                </script>
+            ")->withInput();
+        }
+
         $siswa = Siswa::where('kelas_id', $request->e_kelas)->get();
         if ($siswa->count() == 0) {
             return redirect('/guru/ujian/create')->with('pesan', "
@@ -206,6 +243,7 @@ class UjianGuruController extends Controller
             'guru_id' => session('guru')->id,
             'kelas_id' => $request->e_kelas,
             'mapel_id' => $request->e_mapel,
+            'materi_id' => $request->e_materi,
             'jam' => $request->e_jam,
             'menit' => $request->e_menit,
             'acak' => $request->e_acak,
@@ -244,7 +282,7 @@ class UjianGuruController extends Controller
             <script>
                 swal({
                     title: 'Success!',
-                    text: 'ujian sudah di posting!',
+                    text: 'Tugas sudah di posting!',
                     type: 'success',
                     padding: '2em'
                 })
@@ -254,6 +292,22 @@ class UjianGuruController extends Controller
 
     public function store_essay(Request $request)
     {
+        $pg_tugas = Ujian::where('materi_id',$request->materi)->where('jenis',1)->get();
+
+        if($pg_tugas->count() == 1)
+        {
+            return redirect('/guru/ujian/create')->with('pesan', "
+                <script>
+                    swal({
+                        title: 'Error!',
+                        text: 'Soal dan Materi Sudah Ada',
+                        type: 'error',
+                        padding: '2em'
+                    })
+                </script>
+            ")->withInput();
+        }
+
         $siswa = Siswa::where('kelas_id', $request->kelas)->get();
         if ($siswa->count() == 0) {
             return redirect('/guru/ujian_essay')->with('pesan', "
@@ -276,6 +330,7 @@ class UjianGuruController extends Controller
             'guru_id' => session('guru')->id,
             'kelas_id' => $request->kelas,
             'mapel_id' => $request->mapel,
+            'materi_id' => $request->materi,
             'jam' => $request->jam,
             'menit' => $request->menit,
         ];
@@ -325,7 +380,7 @@ class UjianGuruController extends Controller
             <script>
                 swal({
                     title: 'Success!',
-                    text: 'ujian sudah di posting!',
+                    text: 'Tugas sudah di posting!',
                     type: 'success',
                     padding: '2em'
                 })
@@ -342,7 +397,7 @@ class UjianGuruController extends Controller
     public function show(Ujian $ujian)
     {
         return view('guru.ujian.show', [
-            'title' => 'Detail Ujian Pilihan Ganda',
+            'title' => 'Detail Tugas Pilihan Ganda',
             'plugin' => '
                 <link href="' . url("/assets") . '/ew/css/style.css" rel="stylesheet" type="text/css" />
                 <script src="' . url("/assets") . '/ew/js/examwizard.js"></script>
@@ -361,7 +416,7 @@ class UjianGuruController extends Controller
             ->where('siswa_id', $siswa_id)
             ->get();
         return view('guru.ujian.show-siswa', [
-            'title' => 'Detail Ujian Siswa',
+            'title' => 'Detail Tugas Siswa',
             'plugin' => '
                 <link href="' . url("/assets") . '/ew/css/style.css" rel="stylesheet" type="text/css" />
                 <script src="' . url("/assets") . '/ew/js/examwizard.js"></script>
@@ -380,7 +435,7 @@ class UjianGuruController extends Controller
     public function show_essay(Ujian $ujian)
     {
         return view('guru.ujian.show-essay', [
-            'title' => 'Detail Ujian Essay',
+            'title' => 'Detail Tugas Essay',
             'plugin' => '
                 <link href="' . url("/assets") . '/ew/css/style.css" rel="stylesheet" type="text/css" />
                 <script src="' . url("/assets") . '/ew/js/examwizard.js"></script>
@@ -399,7 +454,7 @@ class UjianGuruController extends Controller
             ->where('siswa_id', $siswa_id)
             ->get();
         return view('guru.ujian.show-essay-siswa', [
-            'title' => 'Detail Ujian Essay Siswa',
+            'title' => 'Detail Tugas Essay Siswa',
             'plugin' => '
                 <link href="' . url("/assets") . '/ew/css/style.css" rel="stylesheet" type="text/css" />
                 <script src="' . url("/assets") . '/ew/js/examwizard.js"></script>
@@ -476,7 +531,7 @@ class UjianGuruController extends Controller
             <script>
                 swal({
                     title: 'Success!',
-                    text: 'ujian di hapus!',
+                    text: 'Tugas di hapus!',
                     type: 'success',
                     padding: '2em'
                 })

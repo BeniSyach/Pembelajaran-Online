@@ -26,6 +26,14 @@
                     <span>GURU MENU</span>
                 </div>
             </li>
+            <li class="menu {{ ($menu['menu'] == 'absen') ? 'active' : ''; }}">
+                <a href="{{ url("/guru/absen") }}" aria-expanded="{{ ($menu['expanded'] == 'absen') ? 'true' : 'false'; }}" class="dropdown-toggle">
+                    <div class="">
+                        <span data-feather="book"></span>
+                        <span>Absen</span>
+                    </div>
+                </a>
+            </li>
             <li class="menu {{ ($menu['menu'] == 'materi') ? 'active' : ''; }}">
                 <a href="{{ url("/guru/materi") }}" aria-expanded="{{ ($menu['expanded'] == 'materi') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">
@@ -34,30 +42,30 @@
                     </div>
                 </a>
             </li>
-            <li class="menu {{ ($menu['menu'] == 'tugas') ? 'active' : ''; }}">
+            {{-- <li class="menu {{ ($menu['menu'] == 'tugas') ? 'active' : ''; }}">
                 <a href="{{ url("/guru/tugas") }}" aria-expanded="{{ ($menu['expanded'] == 'tugas') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">
                         <span data-feather="book"></span>
                         <span>Tugas</span>
                     </div>
                 </a>
-            </li>
+            </li> --}}
             <li class="menu {{ ($menu['menu'] == 'ujian') ? 'active' : ''; }}">
                 <a href="{{ url("/guru/ujian") }}" aria-expanded="{{ ($menu['expanded'] == 'ujian') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">
                         <span data-feather="cast"></span>
-                        <span>Ujian</span>
+                        <span>Tugas/Kuis</span>
                     </div>
                 </a>
             </li>
-            <li class="menu {{ ($menu['menu'] == 'rekap_nilai') ? 'active' : ''; }}">
+            {{-- <li class="menu {{ ($menu['menu'] == 'rekap_nilai') ? 'active' : ''; }}">
                 <a href="{{ url("/guru/rekap_nilai") }}" aria-expanded="{{ ($menu['expanded'] == 'rekap_nilai') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">
                         <span data-feather="cast"></span>
                         <span>Rekap Nilai Siswa</span>
                     </div>
                 </a>
-            </li>
+            </li> --}}
             <li class="menu menu-heading">
                 <div class="heading">
                     <span data-feather="minus"></span>

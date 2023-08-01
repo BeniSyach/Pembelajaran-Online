@@ -93,6 +93,7 @@ class MateriGuruController extends Controller
                 </script>
             ")->withInput();
         }
+
         $validateMateri = $request->validate([
             'nama_materi' => 'required',
             'teks' => 'required',
@@ -101,6 +102,8 @@ class MateriGuruController extends Controller
         $validateMateri['guru_id'] = session('guru')->id;
         $validateMateri['kelas_id'] = $request->kelas;
         $validateMateri['mapel_id'] = $request->mapel;
+
+        
 
         $email_siswa = '';
         $notifikasi = [];

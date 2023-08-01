@@ -2,32 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AbsenSiswa_Model;
-use App\Models\Notifikasi;
-use App\Models\Siswa;
-use App\Models\TugasSiswa;
-use App\Models\WaktuUjian;
+use App\Models\AbsenGuru_Model;
+use App\Models\Guru;
+
 use Illuminate\Http\Request;
 
-class AbsenSiswaController extends Controller
+class AbsenGuruController extends Controller
 {
     public function index()
     {
-        $notif_tugas = TugasSiswa::where('siswa_id', session('siswa')->id)
-            ->where('date_send', null)
-            ->get();
+        $get_tanggal_absen = AbsenGuru_Model::where('guru_id',session('guru')->id)->latest()->first();
+        $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at'] ));
 
-        $notif_ujian = WaktuUjian::where('siswa_id', session('siswa')->id)
-            ->where('selesai', null)
-            ->get();
-
-         $get_tanggal_absen = AbsenSiswa_Model::where('siswa_id',session('siswa')->id)->latest()->first();
-         $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at'] ));
-           
-
-
-        return view('siswa.absen.index', [
-            'title' => 'Absen Siswa',
+        return view('guru.absen.index', [
+            'title' => 'Absen',
             'plugin' => '
                 <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/datatables.css">
                 <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/dt-global_style.css">
@@ -38,10 +26,7 @@ class AbsenSiswaController extends Controller
                 'menu' => 'absen',
                 'expanded' => 'absen'
             ],
-            'siswa' => Siswa::firstWhere('id', session('siswa')->id),
-            'notif_tugas' => $notif_tugas,
-            'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
-            'notif_ujian' => $notif_ujian,
+            'guru' => Guru::firstWhere('id', session('guru')->id),
             'tanggal_absen' => $tanggal_absen
         ]);
     }
@@ -49,13 +34,13 @@ class AbsenSiswaController extends Controller
     public function store($id)
     {
         $tanggal = date('Y-m-d' );
-        $get_tanggal_absen = AbsenSiswa_Model::where('idAbsen',$id)->latest()->first();
+        $get_tanggal_absen = AbsenGuru_Model::where('idAbsen',$id)->latest()->first();
         $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at'] ));
 
 
         if($tanggal == $tanggal_absen)
         {
-            return redirect('/siswa/absen')->with('pesan', "
+            return redirect('/guru/absen')->with('pesan', "
             <script>
                 swal({
                     title: 'Gagal!!',
@@ -66,11 +51,11 @@ class AbsenSiswaController extends Controller
             </script>
         ");
         }else{
-            AbsenSiswa_Model::create([
-                'siswa_id' => $id,
+            AbsenGuru_Model::create([
+                'guru_id' => $id,
                 'status' => 'hadir'
             ]);
-            return redirect('/siswa/absen')->with('pesan', "
+            return redirect('/guru/absen')->with('pesan', "
             <script>
                 swal({
                     title: 'Berhasil!',

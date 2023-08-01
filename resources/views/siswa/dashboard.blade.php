@@ -18,7 +18,7 @@
                             @if ($notif_tugas->count() > 0)
                         {{-- {{ dd($notif_tugas) }} --}}
                                 @foreach ($notif_tugas as $ts)
-                                    <a href="{{ url('/siswa/tugas/' . $ts->kode) }}">
+                                    {{-- <a href="{{ url('/siswa/tugas/' . $ts->kode) }}"> --}}
                                         <div class="transactions-list mt-1">
                                             <div class="t-item">
                                                 <div class="t-company-name">
@@ -54,7 +54,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    {{-- </a> --}}
                                 @endforeach
                             @else
                                 <div class="transactions-list" style="background: #b9eabb; border: 2px dashed #45c849;">
@@ -81,7 +81,7 @@
                         <div class="widget-content">
                             @if ($notif_materi->count() > 0)
                                 @foreach ($notif_materi as $nm)
-                                    <a href="{{ url('/siswa/materi/' . $nm->kode) }}">
+                                    {{-- <a href="{{ url('/siswa/materi/' . $nm->kode) }}"> --}}
                                         <div class="transactions-list mt-1">
                                             <div class="t-item">
                                                 <div class="t-company-name">
@@ -97,7 +97,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    {{-- </a> --}}
                                 @endforeach
                             @else
                                 <div class="transactions-list" style="background: #ffeccb; border: 2px dashed #e2a03f;">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-
+{{-- 
                 <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12 layout-spacing">
                     <div class="widget widget-table-one p-3">
                         <div class="widget-heading">
@@ -190,7 +190,7 @@
                             @endif
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
 
             <div class="row layout-top-spacing">

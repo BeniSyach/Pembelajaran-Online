@@ -14,7 +14,7 @@
                     <div class="col-lg-12 layout-spacing">
                         <div class="widget shadow p-3">
                             <div class="widget-heading">
-                                <h5 class="">Ujian Pilihan Ganda</h5>
+                                <h5 class="">Tugas Pilihan Ganda</h5>
                                 <a href="javascript:void(0);" class="btn btn-primary my-2" data-toggle="modal"
                                     data-target="#excel_ujian">Import Excel</a>
                                 <div class="row mt-2">
@@ -50,6 +50,18 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
+                                            <label for="">Materi</label>
+                                            <select class="form-control" name="materi" id="materi" required>
+                                                <option value="">Pilih</option>
+                                                @foreach ($guru_materi as $gm)
+                                                    <option value="{{ $gm->id }}">{{ $gm->nama_materi }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="col-lg-6">
+                                        <div class="form-group">
                                             <label for="">Waktu Jam</label>
                                             <input type="number" name="jam" class="form-control" value="0"
                                                 required>
@@ -61,7 +73,7 @@
                                             <input type="number" name="menit" class="form-control" value="0"
                                                 required>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-lg-12">
@@ -228,6 +240,18 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
+                                    <label for="">Materi</label>
+                                    <select class="form-control" name="e_materi" id="e_materi" required>
+                                        <option value="">Pilih</option>
+                                        @foreach ($guru_materi as $gm)
+                                                    <option value="{{ $gm->id }}">{{ $gm->nama_materi }}
+                                                    </option>
+                                                @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            {{-- <div class="col-lg-6">
+                                <div class="form-group">
                                     <label for="">Waktu Jam</label>
                                     <input type="number" name="e_jam" class="form-control" value="0" required>
                                 </div>
@@ -237,7 +261,7 @@
                                     <label for="">Waktu Menit</label>
                                     <input type="number" name="e_menit" class="form-control" value="0" required>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="row mt-2">
                             <div class="col-lg-12">

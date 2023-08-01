@@ -132,7 +132,7 @@ class BelajarSiswaController extends Controller
         $notif_tugas = TugasSiswa::where('siswa_id', session('siswa')->id)
             ->where('date_send', null)
             ->get();
-
+        
         // Soal Pilihan Ganda
         $ujian = Ujian::where('kode','f8gIHMjjnj39mzbzylJCNKp6xvHfE0')->first();
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsenGuruController;
 use App\Http\Controllers\AbsenSiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -148,6 +149,10 @@ Route::get('/guru', [GuruController::class, 'index'])->middleware('is_guru');
 Route::get('/guru/profile', [GuruController::class, 'profile'])->middleware('is_guru');
 Route::post('/guru/edit_profile/{guru:id}', [GuruController::class, 'edit_profile'])->middleware('is_guru');
 Route::post('/guru/edit_password/{guru:id}', [GuruController::class, 'edit_password'])->middleware('is_guru');
+
+// Absen
+Route::get('/guru/absen',[AbsenGuruController::class,'index'])->middleware('is_guru');
+Route::get('/guru/absen/{id}',[AbsenGuruController::class,'store'])->middleware('is_guru');
 
 // ==>Materi
 Route::post('/guru/edit_password/{guru:id}', [GuruController::class, 'edit_password'])->middleware('is_guru');

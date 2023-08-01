@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="widget-heading">
-                                    <h5 class="">Ujian / Quiz</h5>
+                                    <h5 class="">Tugas / Quiz</h5>
                                     <a href="javascript:void(0)" class="btn btn-primary mt-3" data-toggle="modal"
                                         data-target="#tambah_ujian">Tambah</a>
                                 </div>

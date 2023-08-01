@@ -40,6 +40,7 @@ class NilaiSiswaController extends Controller
         ],
         'siswa' => Siswa::firstWhere('id', session('siswa')->id),
         'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->get(),
+        
         'notif_tugas' => $notif_tugas,
         'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
         'notif_ujian' => $notif_ujian
