@@ -84,7 +84,7 @@ class BelajarSiswaController extends Controller
             <script>
                 swal({
                     title: 'Success!',
-                    text: 'ujian sudah dikerjakan!',
+                    text: 'Tugas sudah dikerjakan!',
                     type: 'success',
                     padding: '2em'
                 })
@@ -103,16 +103,16 @@ class BelajarSiswaController extends Controller
        $kode_materi =  KmMateri::where('kelas_id',$id_kelas)->first();
        
 
-        return redirect('/siswa/belajar_essay/' . $kode_materi['kode'])->with('pesan', "
-            <script>
-                swal({
-                    title: 'Success!',
-                    text: 'ujian sudah dikerjakan!',
-                    type: 'success',
-                    padding: '2em'
-                })
-            </script>
-        ");
+       return redirect('/siswa/belajar/' . $kode_materi['kode'])->with('pesan', "
+       <script>
+           swal({
+               title: 'Success!',
+               text: 'Tugas sudah dikerjakan!',
+               type: 'success',
+               padding: '2em'
+           })
+       </script>
+   ");
     }
 
     /**
@@ -132,9 +132,11 @@ class BelajarSiswaController extends Controller
         $notif_tugas = TugasSiswa::where('siswa_id', session('siswa')->id)
             ->where('date_send', null)
             ->get();
+     
         
         // Soal Pilihan Ganda
-        $ujian = Ujian::where('kode','f8gIHMjjnj39mzbzylJCNKp6xvHfE0')->first();
+        $ujian = Ujian::where('materi_id',$belajar->id)->where('jenis',0)->first();
+
 
         $pg_siswa = PgSiswa::where('kode', $ujian->kode)
         ->where('siswa_id', session('siswa')->id)
@@ -178,7 +180,7 @@ class BelajarSiswaController extends Controller
         ->get(); 
 
         // Soal Essay 
-        $ujian_essay = Ujian::where('kode','CWtxQDkugz7MdZMyESTwzncPD48mcX')->first();
+        $ujian_essay = Ujian::where('materi_id',$belajar->id)->where('jenis',1)->first();
         $essay_siswa = EssaySiswa::where('kode', $ujian_essay->kode)
             ->where('siswa_id', session('siswa')->id)
             ->get();
@@ -192,7 +194,8 @@ class BelajarSiswaController extends Controller
                     'siswa_id' => session('siswa')->id
                 ]);
             }
-
+            $timestamp = strtotime(date('Y-m-d G:i', time()));
+            $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
             $data_waktu_ujian = [
                 'waktu_berakhir' => $waktu_berakhir
             ];

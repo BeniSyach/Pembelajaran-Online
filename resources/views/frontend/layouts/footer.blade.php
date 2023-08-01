@@ -6,8 +6,8 @@
                 <div class="single-footer-widget tp_widgets">
                     <h6 class="footer_title">Tentang Kami</h6>
                     <ul class="list">
-                        <li><a href="{{ url('tentang') }}">Tentang</a></li>
-                        <li><a href="{{ url('materi') }}">Materi</a></li>
+                        {{-- <li><a href="{{ url('tentang') }}">Tentang</a></li>
+                        <li><a href="{{ url('materi') }}">Materi</a></li> --}}
                         <li><a href="{{ url('kontak') }}">Kontak</a></li>
                     </ul>
                 </div>
