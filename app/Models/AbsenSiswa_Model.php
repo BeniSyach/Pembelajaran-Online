@@ -12,6 +12,7 @@ class AbsenSiswa_Model extends Model
     public $table = 'absen_siswa';
 
     protected $guarded = ['idAbsen'];
+    protected $primaryKey = 'idAbsen';
 
     protected $fillable = [
         'siswa_id',
@@ -20,4 +21,12 @@ class AbsenSiswa_Model extends Model
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+
+    protected $with = ['siswa'];
+
+    // Relasi Ke siswa
+    public function siswa()
+    {
+        return $this->belongsTo(Siswa::class);
+    }
 }

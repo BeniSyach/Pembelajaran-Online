@@ -132,6 +132,7 @@
             </div>
         </div>
     </div>
+    @if ($check_pg == false)
     <!-- Start Soal PG -->
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
@@ -508,8 +509,13 @@
             </div>
         @endif
     </div>
+    @include('ew.ew-s-p')
     <!--  END Soal PG  -->
-    <!-- Start Essay -->
+    @endif
+
+
+    @if ($check_essay == false)
+            <!-- Start Essay -->
     <div class="layout-px-spacing">
         <div class="row layout-top-spacing">
             <div class="col-lg-12 layout-spacing">
@@ -802,7 +808,11 @@
         @endif
 
     </div>
+    @include('ew.ew-s-e')
     <!--  END Essay  -->
+
+    @endif
+
     <!--  END CONTENT AREA  -->
     @include('template.footer')
 </div>
@@ -904,6 +914,6 @@
 </script>
 
     {!! session('pesan') !!}
-    @include('ew.ew-s-p')
-    @include('ew.ew-s-e')
+
+   
 @endsection

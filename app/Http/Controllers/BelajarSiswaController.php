@@ -135,83 +135,95 @@ class BelajarSiswaController extends Controller
      
         
         // Soal Pilihan Ganda
-        $ujian = Ujian::where('materi_id',$belajar->id)->where('jenis',0)->first();
+        $check_pg = is_null(Ujian::where('materi_id',$belajar->id)->where('jenis',0)->first());
+        if($check_pg == false)
+        {
+                $ujian = Ujian::where('materi_id',$belajar->id)->where('jenis',0)->first();
 
 
-        $pg_siswa = PgSiswa::where('kode', $ujian->kode)
-        ->where('siswa_id', session('siswa')->id)
-        ->get();
-    if ($pg_siswa->count() == 0) {
-        $data_pg_siswa = [];
-        foreach ($ujian->detailujian as $soal) {
-            array_push($data_pg_siswa, [
-                'detail_ujian_id' => $soal->id,
-                'kode' => $soal->kode,
-                'siswa_id' => session('siswa')->id
-            ]);
+                $pg_siswa = PgSiswa::where('kode', $ujian->kode)
+                ->where('siswa_id', session('siswa')->id)
+                ->get();
+            if ($pg_siswa->count() == 0) {
+                $data_pg_siswa = [];
+                foreach ($ujian->detailujian as $soal) {
+                    array_push($data_pg_siswa, [
+                        'detail_ujian_id' => $soal->id,
+                        'kode' => $soal->kode,
+                        'siswa_id' => session('siswa')->id
+                    ]);
+                }
+        
+                if ($ujian->acak == 1) {
+                    $randomize = collect($data_pg_siswa)->shuffle();
+                    $soal_pg_siswa = $randomize->toArray();
+                } else {
+                    $soal_pg_siswa = $data_pg_siswa;
+                }
+        
+        
+                $timestamp = strtotime(date('Y-m-d G:i', time()));
+                $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
+        
+                $data_waktu_ujian = [
+                    'waktu_berakhir' => $waktu_berakhir
+                ];
+                WaktuUjian::where('kode', $ujian->kode)
+                    ->where('siswa_id', session('siswa')->id)
+                    ->update($data_waktu_ujian);
+        
+                PgSiswa::insert($soal_pg_siswa);
+            }
+        
+            $waktu_ujian = WaktuUjian::where('kode', $ujian->kode)
+                ->where('siswa_id', session('siswa')->id)
+                ->first();
+            $pg_siswa = PgSiswa::where('kode', $ujian->kode)
+                ->where('siswa_id', session('siswa')->id)
+                ->get(); 
         }
-
-        if ($ujian->acak == 1) {
-            $randomize = collect($data_pg_siswa)->shuffle();
-            $soal_pg_siswa = $randomize->toArray();
-        } else {
-            $soal_pg_siswa = $data_pg_siswa;
-        }
-
-
-        $timestamp = strtotime(date('Y-m-d G:i', time()));
-        $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
-
-        $data_waktu_ujian = [
-            'waktu_berakhir' => $waktu_berakhir
-        ];
-        WaktuUjian::where('kode', $ujian->kode)
-            ->where('siswa_id', session('siswa')->id)
-            ->update($data_waktu_ujian);
-
-        PgSiswa::insert($soal_pg_siswa);
-    }
-
-    $waktu_ujian = WaktuUjian::where('kode', $ujian->kode)
-        ->where('siswa_id', session('siswa')->id)
-        ->first();
-    $pg_siswa = PgSiswa::where('kode', $ujian->kode)
-        ->where('siswa_id', session('siswa')->id)
-        ->get(); 
+        
 
         // Soal Essay 
-        $ujian_essay = Ujian::where('materi_id',$belajar->id)->where('jenis',1)->first();
-        $essay_siswa = EssaySiswa::where('kode', $ujian_essay->kode)
-            ->where('siswa_id', session('siswa')->id)
-            ->get();
+        $chek_essay = is_null(Ujian::where('materi_id',$belajar->id)->where('jenis',1)->first());
 
-        if ($essay_siswa->count() == 0) {
-            $data_essay_siswa = [];
-            foreach ($ujian_essay->detailessay as $soal) {
-                array_push($data_essay_siswa, [
-                    'detail_ujian_id' => $soal->id,
-                    'kode' => $soal->kode,
-                    'siswa_id' => session('siswa')->id
-                ]);
-            }
-            $timestamp = strtotime(date('Y-m-d G:i', time()));
-            $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
-            $data_waktu_ujian = [
-                'waktu_berakhir' => $waktu_berakhir
-            ];
-            WaktuUjian::where('kode', $ujian_essay->kode)
+        if($chek_essay == false)
+        {
+            $ujian_essay = Ujian::where('materi_id',$belajar->id)->where('jenis',1)->first();
+            $essay_siswa = EssaySiswa::where('kode', $ujian_essay->kode)
                 ->where('siswa_id', session('siswa')->id)
-                ->update($data_waktu_ujian);
-
-            EssaySiswa::insert($data_essay_siswa);
+                ->get();
+    
+            if ($essay_siswa->count() == 0) {
+                $data_essay_siswa = [];
+                foreach ($ujian_essay->detailessay as $soal) {
+                    array_push($data_essay_siswa, [
+                        'detail_ujian_id' => $soal->id,
+                        'kode' => $soal->kode,
+                        'siswa_id' => session('siswa')->id
+                    ]);
+                }
+                $timestamp = strtotime(date('Y-m-d G:i', time()));
+                $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
+                $data_waktu_ujian = [
+                    'waktu_berakhir' => $waktu_berakhir
+                ];
+                WaktuUjian::where('kode', $ujian_essay->kode)
+                    ->where('siswa_id', session('siswa')->id)
+                    ->update($data_waktu_ujian);
+    
+                EssaySiswa::insert($data_essay_siswa);
+            }
+    
+            $waktu_ujian_essay = WaktuUjian::where('kode', $ujian_essay->kode)
+                ->where('siswa_id', session('siswa')->id)
+                ->first();
+            $essay_siswa = EssaySiswa::where('kode', $ujian_essay->kode)
+                ->where('siswa_id', session('siswa')->id)
+                ->get();
         }
 
-        $waktu_ujian_essay = WaktuUjian::where('kode', $ujian_essay->kode)
-            ->where('siswa_id', session('siswa')->id)
-            ->first();
-        $essay_siswa = EssaySiswa::where('kode', $ujian_essay->kode)
-            ->where('siswa_id', session('siswa')->id)
-            ->get();
+       
 
 
         return view('siswa.belajar.show', [
@@ -234,16 +246,16 @@ class BelajarSiswaController extends Controller
             'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
             'notif_ujian' => $notif_ujian,
             // soal pg
-            'siswa' => Siswa::firstWhere('id', session('siswa')->id),
-            'notif_tugas' => $notif_tugas,
-            'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
-            'ujian' => $ujian,
-            'pg_siswa' => $pg_siswa,
-            'waktu_ujian' => $waktu_ujian,
+            'check_pg' =>  $check_pg ?? 'null',
+            'notif_tugas' => $notif_tugas ?? 'null',
+            'ujian' => $ujian ?? 'null',
+            'pg_siswa' => $pg_siswa ?? 'null',
+            'waktu_ujian' => $waktu_ujian ?? 'null',
             // soal essay
-            'ujian_essay' => $ujian_essay,
-            'waktu_ujian_essay' =>$waktu_ujian_essay,
-            'essay_siswa' => $essay_siswa
+            'check_essay' =>$chek_essay ?? 'null',
+            'ujian_essay' => $ujian_essay ?? 'null',
+            'waktu_ujian_essay' =>$waktu_ujian_essay ?? "null",
+            'essay_siswa' => $essay_siswa ?? 'null'
         ]);
     }
 

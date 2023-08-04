@@ -50,7 +50,7 @@ class AuthController extends Controller
                     </script>
                 ");
             } else {
-                return redirect('/')->with('pesan', "
+                return redirect('/login')->with('pesan', "
                     <script>
                         swal({
                             title: 'Login Failed!',
@@ -67,7 +67,7 @@ class AuthController extends Controller
         if ($guru) {
 
             if ($guru->is_active == 0) {
-                return redirect('/')->with('pesan', "
+                return redirect('/login')->with('pesan', "
                     <script>
                         swal({
                             title: 'Login Failed!',
@@ -92,7 +92,7 @@ class AuthController extends Controller
                     </script>
                 ");
             } else {
-                return redirect('/')->with('pesan', "
+                return redirect('/login')->with('pesan', "
                     <script>
                         swal({
                             title: 'Login Failed!',
@@ -109,7 +109,7 @@ class AuthController extends Controller
         if ($siswa) {
 
             if ($siswa->is_active == 0) {
-                return redirect('/')->with('pesan', "
+                return redirect('/login')->with('pesan', "
                     <script>
                         swal({
                             title: 'Login Failed!',
@@ -134,7 +134,7 @@ class AuthController extends Controller
                     </script>
                 ");
             } else {
-                return redirect('/')->with('pesan', "
+                return redirect('/login')->with('pesan', "
                     <script>
                         swal({
                             title: 'Login Failed!',
@@ -147,7 +147,7 @@ class AuthController extends Controller
             }
         }
 
-        return redirect('/')->with('pesan', "
+        return redirect('/login')->with('pesan', "
             <script>
                 swal({
                     title: 'Login Failed!',
@@ -163,7 +163,7 @@ class AuthController extends Controller
     {
         $admin = Admin::all();
         if ($admin->count() != 0) {
-            return redirect('/')->with('pesan', "
+            return redirect('/login')->with('pesan', "
                 <script>
                     swal({
                         title: 'Error!',
@@ -189,7 +189,7 @@ class AuthController extends Controller
 
         $validate['password'] = Hash::make($validate['password']);
         Admin::create($validate);
-        return redirect('/')->with('pesan', "
+        return redirect('/login')->with('pesan', "
             <script>
                 swal({
                     title: 'Berhasil!',
@@ -251,7 +251,7 @@ class AuthController extends Controller
             Siswa::create($validate);
             Token::create($tokens);
 
-            return redirect('/')->with('pesan', "
+            return redirect('/login')->with('pesan', "
                 <script>
                     swal({
                         title: 'Berhasil!',
@@ -297,7 +297,7 @@ class AuthController extends Controller
             Mail::to("$request->email")->send(new VerifikasiAkun($details));
             Guru::create($validate);
             Token::create($tokens);
-            return redirect('/')->with('pesan', "
+            return redirect('/login')->with('pesan', "
                 <script>
                     swal({
                         title: 'Berhasil!',
@@ -323,7 +323,7 @@ class AuthController extends Controller
             Token::where('id', $token->id)
                 ->delete();
 
-            return redirect('/')->with('pesan', "
+            return redirect('/login')->with('pesan', "
                 <script>
                     swal({
                         title: 'Token Expired!',
@@ -346,7 +346,7 @@ class AuthController extends Controller
         Token::where('id', $token->id)
             ->delete();
 
-        return redirect('/')->with('pesan', "
+        return redirect('/login')->with('pesan', "
             <script>
                 swal({
                     title: 'Success!',
@@ -362,7 +362,7 @@ class AuthController extends Controller
     {
         $admin = Admin::all();
         if ($admin->count() == 0) {
-            return redirect('/')->with('pesan', "
+            return redirect('/login')->with('pesan', "
                 <script>
                     swal({
                         title: 'Error!',
@@ -420,7 +420,7 @@ class AuthController extends Controller
         Mail::to("$request->email")->send(new ForgotPassword($details));
         Token::create($tokens);
 
-        return redirect('/')->with('pesan', "
+        return redirect('/login')->with('pesan', "
                 <script>
                     swal({
                         title: 'Berhasil!',
@@ -437,7 +437,7 @@ class AuthController extends Controller
             Token::where('id', $token->id)
                 ->delete();
 
-            return redirect('/')->with('pesan', "
+            return redirect('/login')->with('pesan', "
                 <script>
                     swal({
                         title: 'Token Expired!',
@@ -471,7 +471,7 @@ class AuthController extends Controller
         Token::where('id', $token->id)
             ->delete();
 
-        return redirect('/')->with('pesan', "
+        return redirect('/login')->with('pesan', "
             <script>
                 swal({
                     title: 'Berhasil!',
@@ -491,6 +491,6 @@ class AuthController extends Controller
 
         $request->session()->forget('admin');
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

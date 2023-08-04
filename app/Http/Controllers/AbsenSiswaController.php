@@ -22,9 +22,8 @@ class AbsenSiswaController extends Controller
             ->get();
 
          $get_tanggal_absen = AbsenSiswa_Model::where('siswa_id',session('siswa')->id)->latest()->first();
-         $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at'] ));
-           
-
+         $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at']?? 'null' ));
+        // dd($tanggal_absen);
 
         return view('siswa.absen.index', [
             'title' => 'Absen Siswa',
@@ -49,8 +48,8 @@ class AbsenSiswaController extends Controller
     public function store($id)
     {
         $tanggal = date('Y-m-d' );
-        $get_tanggal_absen = AbsenSiswa_Model::where('idAbsen',$id)->latest()->first();
-        $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at'] ));
+        $get_tanggal_absen =AbsenSiswa_Model::where('idAbsen',$id)->latest()->first();
+        $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at']?? 'null' ));
 
 
         if($tanggal == $tanggal_absen)

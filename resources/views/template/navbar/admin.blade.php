@@ -73,6 +73,30 @@
                     </div>
                 </a>
             </li>
+            <li class="menu {{ ($menu['menu'] == 'absen') ? 'active' : ''; }}">
+                <a href="#absen" data-toggle="collapse" aria-expanded="{{ ($menu['expanded'] == 'absen') ? 'true' : 'false'; }}" class="dropdown-toggle">
+                    <div class="">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        <span>Absen</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled {{ ($menu['collapse'] == 'absen') ? 'show' : ''; }}" id="absen" data-parent="#accordionExample">
+                    <li class="{{ ($menu['sub'] == 'absen_siswa') ? 'active' : ''; }}">
+                        <a href="{{ url("/admin/absen/siswa") }}">Data Absen Siswa </a>
+                    </li>
+                    <li class="{{ ($menu['sub'] == 'absen_guru') ? 'active' : ''; }}">
+                        <a href="{{ url("/admin/absen/guru") }}">Data Absen Guru </a>
+                    </li>
+                </ul>
+            </li>
             <li class="menu {{ ($menu['menu'] == 'relasi') ? 'active' : ''; }}">
                 <a href="{{ url("/admin/relasi") }}" aria-expanded="{{ ($menu['expanded'] == 'relasi') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">
@@ -86,7 +110,7 @@
                     </div>
                 </a>
             </li>
-            <li class="menu menu-heading">
+            {{-- <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg><span>KAMPUS MERDEKA</span></div>
@@ -136,7 +160,7 @@
                         <span>Tugas</span>
                     </div>
                 </a>
-            </li>
+            </li> --}}
             {{-- <li class="menu {{ ($menu['menu'] == 'ujian') ? 'active' : ''; }}">
                 <a href="{{ url("/guru/ujian") }}" aria-expanded="{{ ($menu['expanded'] == 'ujian') ? 'true' : 'false'; }}" class="dropdown-toggle">
                     <div class="">

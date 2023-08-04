@@ -12,6 +12,8 @@ class AbsenGuru_Model extends Model
     public $table = 'absen_guru';
 
     protected $guarded = ['idAbsen'];
+    protected $primaryKey = 'idAbsen';
+    protected $with = ['guru'];
 
     protected $fillable = [
         'guru_id',
@@ -20,4 +22,10 @@ class AbsenGuru_Model extends Model
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+
+     // Relasi Ke guru
+     public function guru()
+     {
+         return $this->belongsTo(Guru::class);
+     }   
 }

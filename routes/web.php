@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsenAdminController;
 use App\Http\Controllers\AbsenGuruController;
 use App\Http\Controllers\AbsenSiswaController;
 use Illuminate\Support\Facades\Route;
@@ -66,6 +67,9 @@ Route::post('/admin/edit_password/{admin:id}', [AdminController::class, 'edit_pa
 Route::post('/admin/smtp_email/{id}', [AdminController::class, 'smtp_email'])->middleware('is_admin');
 // =============SISWA
 // ==>View
+Route::get('/admin/absen/siswa',[AbsenAdminController::class,'siswa'])->middleware('is_admin');
+Route::get('/admin/absen/hapus_absen_siswa/{id}',[AbsenAdminController::class,'hapus_absen_siswa'])->middleware('is_admin');
+Route::get('/admin/absen/cetak_absen_siswa',[AbsenAdminController::class,'cetak_absen_siswa'])->middleware('is_admin');
 Route::get('/admin/siswa', [AdminController::class, 'siswa'])->middleware('is_admin');
 Route::get('/admin/edit_siswa', [AdminController::class, 'edit_siswa'])->name('ajaxsiswa')->middleware('is_admin');
 Route::get('/admin/impor_siswa', [AdminController::class, 'impor_siswa'])->middleware('is_admin');
@@ -79,6 +83,9 @@ Route::get('/admin/hapus_siswa/{siswa:nis}', [AdminController::class, 'hapus_sis
 
 // ============GURU
 // ==>View
+Route::get('/admin/absen/guru',[AbsenAdminController::class,'guru'])->middleware('is_admin');
+Route::get('/admin/absen/hapus_absen_guru/{id}',[AbsenAdminController::class,'hapus_absen_guru'])->middleware('is_admin');
+Route::get('/admin/absen/cetak_absen_guru',[AbsenAdminController::class,'cetak_absen_guru'])->middleware('is_admin');
 Route::get('/admin/guru', [AdminController::class, 'guru'])->middleware('is_admin');
 Route::get('/admin/edit_guru', [AdminController::class, 'edit_guru'])->name('ajaxguru')->middleware('is_admin');
 Route::get('/admin/impor_guru', [AdminController::class, 'impor_guru'])->middleware('is_admin');

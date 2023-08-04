@@ -12,7 +12,8 @@ class AbsenGuruController extends Controller
     public function index()
     {
         $get_tanggal_absen = AbsenGuru_Model::where('guru_id',session('guru')->id)->latest()->first();
-        $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at'] ));
+        $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at']?? 'null' ));
+       
 
         return view('guru.absen.index', [
             'title' => 'Absen',
@@ -35,7 +36,7 @@ class AbsenGuruController extends Controller
     {
         $tanggal = date('Y-m-d' );
         $get_tanggal_absen = AbsenGuru_Model::where('idAbsen',$id)->latest()->first();
-        $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at'] ));
+        $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at']?? 'null' ));
 
 
         if($tanggal == $tanggal_absen)
