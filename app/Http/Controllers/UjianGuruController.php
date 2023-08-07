@@ -146,7 +146,7 @@ class UjianGuruController extends Controller
             'materi_id' => $request->materi,
             'jam' => $request->jam,
             'menit' => $request->menit,
-            'acak' => $request->acak,
+            'acak' => $request->acak ,
         ];
 
         $detail_ujian = [];
@@ -160,7 +160,7 @@ class UjianGuruController extends Controller
                 'pg_2' => 'B. ' . $request->pg_2[$index],
                 'pg_3' => 'C. ' . $request->pg_3[$index],
                 'pg_4' => 'D. ' . $request->pg_4[$index],
-                'pg_5' => 'E. ' . $request->pg_5[$index],
+                // 'pg_5' => 'E. ' . $request->pg_5[$index],
                 'jawaban' => $request->jawaban[$index]
             ]);
 

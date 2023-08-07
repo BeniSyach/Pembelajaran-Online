@@ -78,7 +78,7 @@
                                 <div class="row mt-2">
                                     <div class="col-lg-12">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="acak" value="1">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="acak" value="1" checked="checked">
                                             <label class="custom-control-label" for="customCheck1">Acak Soal Siswa</label>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        {{-- <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">Pilihan E</label>
                                                 <div class="input-group">
@@ -159,7 +159,7 @@
                                                         placeholder="Opsi E" autocomplete="off" required>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">Jawaban</label>
@@ -295,6 +295,11 @@
         </div>
     </div>
     <script>
+        $('#customCheck1').on('change', function(){
+   this.value = this.checked ? 1 : 0;
+   // alert(this.value);
+        }).change();
+
         $(document).ready(function() {
             function uploadImage(e,o){var a=new FormData;a.append("image",e),$.ajax({headers:{"X-CSRF-TOKEN":"{{ csrf_token() }}"},url:"{{ route('summernote_upload') }}",cache:!1,contentType:!1,processData:!1,data:a,type:"post",success:function(e){$(o).summernote("insertImage",e)},error:function(e){console.log(e)}})}function deleteImage(e){$.ajax({headers:{"X-CSRF-TOKEN":"{{ csrf_token() }}"},data:{src:e},type:"post",url:"{{ route('summernote_delete') }}",cache:!1,success:function(e){console.log(e)}})}setInterval(()=>{$(".summernote").summernote({placeholder:"Hello stand alone ui",tabsize:2,height:120,toolbar:[["style",["style"]],["font",["bold","underline","clear"]],["color",["color"]],["para",["ul","ol","paragraph"]],["table",["table"]],["insert",["link","picture","video"]],["view",["fullscreen","help"]]],callbacks:{onImageUpload:function(e,o=this){uploadImage(e[0],o)},onMediaDelete:function(e){deleteImage(e[0].src)}}})},1e3);
             var no_soal = 2;

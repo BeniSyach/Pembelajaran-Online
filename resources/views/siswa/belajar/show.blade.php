@@ -216,12 +216,12 @@
                                                                 <span>{{ substr($soal->detailujian->pg_4, 3, strlen($soal->detailujian->pg_4)) }}</span>
                                                             </label>
                                                         </li>
-                                                        <li class="answer-number">
+                                                        {{-- <li class="answer-number">
                                                             <input type="radio" data-alternatetype="radio" name="{{ $soal->detailujian->id }}" value="{{ substr($soal->detailujian->pg_5, 0, 1) }}" id="soal{{ $no }}-{{ substr($soal->detailujian->pg_5, 0 ,1) }}" data-pg_siswa="{{ $soal->id }}" data-noSoal="{{ $no }}" @if($soal->jawaban == substr($soal->detailujian->pg_5, 0 ,1)) checked @endif/>
                                                             <label for="soal{{ $no }}-{{ substr($soal->detailujian->pg_5, 0, 1) }}" class="answer-text" style="color: #000;">
                                                                 <span>{{ substr($soal->detailujian->pg_5, 3, strlen($soal->detailujian->pg_5)) }}</span>
                                                             </label>
-                                                        </li>
+                                                        </li> --}}
                                                     </ol>
                                                 </div>
                                             </div>

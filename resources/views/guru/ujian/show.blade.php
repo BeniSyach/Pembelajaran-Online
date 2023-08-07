@@ -104,13 +104,13 @@
                                                                                 <span></span>{{ substr($soal->pg_4, 3, strlen($soal->pg_4)) }}
                                                                             </label>
                                                                         </li>
-                                                                        <li class="answer-number">
+                                                                        {{-- <li class="answer-number">
                                                                             <label
                                                                                 for="answer-{{ $soal->id }}-{{ substr($soal->pg_5, 0, 1) }}"
                                                                                 class="answer-text" style="color: #000;">
                                                                                 <span></span>{{ substr($soal->pg_5, 3, strlen($soal->pg_5)) }}
                                                                             </label>
-                                                                        </li>
+                                                                        </li> --}}
                                                                     </ol>
                                                                 </div>
                                                             </div>
