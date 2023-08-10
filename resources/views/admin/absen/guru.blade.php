@@ -31,7 +31,7 @@
                                         <?php $no = 1; ?>
                                         @foreach ($guru as $s)
                                             <tr>
-                                                <td>{{  $s->created_at }}</td>
+                                                <td>{{ date('d-m-Y H:i:s',strtotime($s->created_at))  }}</td>
                                                 <td>{{  $s->guru->nama_guru }}</td>
                                                 <td>{{  $s->guru->email }}</td>
                                                 <td>{{  $s->status }}</td>

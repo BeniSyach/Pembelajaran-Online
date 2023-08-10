@@ -356,17 +356,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label for="">Pilihan E</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon5">E</span>
-                                        </div>
-                                        <input type="text" name="pg_5[]" class="form-control" placeholder="Opsi E" autocomplete="off" required>
-                                    </div>
-                                </div>
-                            </div>
+      
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="">Jawaban</label>

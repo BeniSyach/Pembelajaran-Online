@@ -159,6 +159,7 @@ Route::post('/guru/edit_password/{guru:id}', [GuruController::class, 'edit_passw
 
 // Absen
 Route::get('/guru/absen',[AbsenGuruController::class,'index'])->middleware('is_guru');
+Route::get('/guru/absen/lihat',[AbsenGuruController::class,'lihat'])->middleware('is_guru');
 Route::get('/guru/absen/{id}',[AbsenGuruController::class,'store'])->middleware('is_guru');
 
 // ==>Materi
@@ -213,7 +214,9 @@ Route::get('/siswa/ujian_essay/{ujian:kode}', [UjianSiswaController::class, 'ess
 Route::post('/siswa/ujian_essay', [UjianSiswaController::class, 'store_essay'])->middleware('is_siswa');
 
 Route::get('/siswa/absen',[AbsenSiswaController::class,'index'])->middleware('is_siswa');
+Route::get('/siswa/absen/lihat',[AbsenSiswaController::class,'lihat'])->middleware('is_siswa');
 Route::get('/siswa/absen/{id}',[AbsenSiswaController::class,'store'])->middleware('is_siswa');
+
 
 Route::get('/siswa/belajar_essay/{belajar:kode}', [BelajarSiswaController::class, 'essay'])->middleware('is_siswa');
 Route::post('/siswa/belajar_essay', [BelajarSiswaController::class, 'store_essay'])->middleware('is_siswa');

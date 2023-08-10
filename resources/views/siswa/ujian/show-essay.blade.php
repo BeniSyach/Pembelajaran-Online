@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            @if ($waktu_ujian->selesai == null)    
+            @if ($waktu_ujian_essay->selesai == null)    
                 <div class="row">
                     <div class="col-lg-9">
                         <form id="examwizard-question" action="{{ url("/siswa/ujian_essay") }}" method="POST">

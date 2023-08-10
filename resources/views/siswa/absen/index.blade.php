@@ -33,6 +33,7 @@
                                                     <td>
                                                         <a href="#" class="btn btn-light" style="pointer-events: none;
                                                         cursor: default;"><span data-feather="eye"></span> Sudah Absen</a>
+                                                        <a href="{{ url("/siswa/absen/lihat") }}" class="btn btn-success my-2 mx-2"><span data-feather="book"></span> lihat</a>
                                                     </td>
                                                     @else
                                                     <td>
@@ -40,7 +41,7 @@
                                                         <form id="examwizard-question" action="{{ url("/siswa/absen/" . $siswa->id) }}" method="get">
                                                             <a href="#" class="btn btn-primary absen_siswa"><span data-feather="eye"></span> absen</a>
                                                         </form>
-
+                                                        <a href="{{ url("/siswa/absen/lihat") }}" class="btn btn-success my-2 mx-2"><span data-feather="book"></span> lihat</a>
                                                     </td>
 
                                                     @endif

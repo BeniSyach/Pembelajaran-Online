@@ -19,6 +19,8 @@ use App\Exports\SiswaExport;
 use App\Imports\SiswaImport;
 use App\Jobs\QueueEmailNotifAkun;
 use App\Mail\NotifAkun;
+use App\Models\AbsenGuru_Model;
+use App\Models\AbsenSiswa_Model;
 use App\Models\AksesSesi;
 use App\Models\EssaySiswa;
 use App\Models\Sesi;
@@ -391,6 +393,8 @@ class AdminController extends Controller
             ->delete();
 
         Siswa::destroy($siswa->id);
+        $absen_siswa = AbsenSiswa_Model::where('siswa_id',$siswa->id);
+        $absen_siswa->delete();
         return redirect('/admin/siswa')->with('pesan', "
             <script>
                 swal({
@@ -614,6 +618,8 @@ class AdminController extends Controller
             ->delete();
 
         Guru::destroy($guru->id);
+        $absen_guru = AbsenGuru_Model::where('guru_id',$guru->id);
+        $absen_guru->delete();
         return redirect('/admin/guru')->with('pesan', "
             <script>
                 swal({

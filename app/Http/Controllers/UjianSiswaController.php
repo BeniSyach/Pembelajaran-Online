@@ -242,7 +242,7 @@ class UjianSiswaController extends Controller
             'notif_ujian' => $notif_ujian,
             'ujian' => $ujian,
             'essay_siswa' => $essay_siswa,
-            'waktu_ujian' => $waktu_ujian
+            'waktu_ujian_essay' => $waktu_ujian
         ]);
     }
 

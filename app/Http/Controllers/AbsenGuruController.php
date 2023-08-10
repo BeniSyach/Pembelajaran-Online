@@ -68,4 +68,26 @@ class AbsenGuruController extends Controller
         ");
         }
     }
+
+    public function lihat()
+    {
+        $get_tanggal_absen = AbsenGuru_Model::where('guru_id',session('guru')->id)->get();
+       
+
+        return view('guru.absen.lihat', [
+            'title' => 'Absen',
+            'plugin' => '
+                <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/datatables.css">
+                <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/dt-global_style.css">
+                <script src="' . url("/assets/backend") . '/plugins/table/datatable/datatables.js"></script>
+                <script src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
+            ',
+            'menu' => [
+                'menu' => 'absen',
+                'expanded' => 'absen'
+            ],
+            'guru' => Guru::firstWhere('id', session('guru')->id),
+            'guruAbsen' => $get_tanggal_absen
+        ]);
+    }
 }

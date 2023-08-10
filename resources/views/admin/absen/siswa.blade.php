@@ -33,7 +33,7 @@
                                         <?php $no = 1; ?>
                                         @foreach ($siswa as $s)
                                             <tr>
-                                                <td>{{  $s->created_at }}</td>
+                                                <td>{{ date('d-m-Y H:i:s',strtotime($s->created_at))  }}</td>
                                                 <td>{{  $s->siswa->nis }}</td>
                                                 <td>{{  $s->siswa->nama_siswa }}</td>
                                                 <td>{{  $s->siswa->email }}</td>
