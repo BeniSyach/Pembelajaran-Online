@@ -9,7 +9,7 @@
                 <div class="col-lg-12 layout-spacing">
                     <div class="widget shadow p-3" style="min-height: 450px;">
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-9">
                                 <div class="widget-heading">
                                     <h5 class="">Data Materi Pelajaran</h5>
                                 </div>
@@ -36,7 +36,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="col-lg-5 d-flex">
+                            <div class="col-lg-3 d-flex">
                                 <img src="{{ url('assets/img') }}/materi.svg" class="align-middle" alt="" style="width: 100%;">
                             </div>
                         </div>

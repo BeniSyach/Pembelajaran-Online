@@ -155,10 +155,7 @@
                                     <th>Jumlah Soal</th>
                                     <th>: {{ $ujian->detailujian->count() }} Soal</th>
                                 </tr>
-                                <tr>
-                                    <th>Waktu Ujian</th>
-                                    <th>: {{ $ujian->jam }} Jam {{ $ujian->menit }} Menit</th>
-                                </tr>
+
                             </table>
                         </div>
                     </div>
@@ -168,13 +165,10 @@
             @if ($waktu_ujian->selesai == null)    
                 <div class="row">
                     <div class="col-lg-9">
-                        <form id="examwizard-question" action="{{ url("/siswa/ujian") }}" method="POST">
+                        <form id="examwizard-question" action="{{ url("/siswa/belajar") }}" method="POST">
                             @csrf
                             <input type="hidden" name="kode" value="{{ $ujian->kode }}">
                             <div class="widget shadow p-2">
-                                <div class="d-flex float-right">
-                                    <div class="badge badge-primary" style="font-size: 18px; font-weight: bold;"><span data-feather="clock"></span> | <span class="jam_skrng">00 : 00 : 00</span></div>
-                                </div>
                                 <div>
                                     @php
                                         $no = 1;
@@ -349,7 +343,7 @@
                         <form id="examwizard-question" action="#" method="POST">
                             <div class="widget shadow p-2">
                                 <div class="d-flex float-right">
-                                    <div class="badge badge-success" style="font-size: 14px; font-weight: bold;">ujian selesai</div>
+                                    <div class="badge badge-success" style="font-size: 14px; font-weight: bold;">Tugas Selesai</div>
                                 </div>
                                 <div>
                                     @php
@@ -558,7 +552,7 @@
                 @if ($waktu_ujian_essay->selesai == null)    
                     <div class="row">
                         <div class="col-lg-9">
-                            <form id="examwizard-question" action="{{ url("/siswa/ujian_essay") }}" method="POST">
+                            <form id="examwizard-question_essay" action="{{ url("/siswa/belajar_essay") }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="kode" value="{{ $ujian_essay->kode }}">
                                 <div class="widget shadow p-2">
@@ -707,7 +701,7 @@
                                 <input type="hidden" name="kode" value="{{ $ujian_essay->kode }}">
                                 <div class="widget shadow p-2">
                                     <div class="d-flex float-right">
-                                        <div class="badge badge-success" style="font-size: 14px; font-weight: bold;">ujian selesai</div>
+                                        <div class="badge badge-success" style="font-size: 14px; font-weight: bold;">Tugas Selesai</div>
                                     </div>
                                     <div>
                                         @php
