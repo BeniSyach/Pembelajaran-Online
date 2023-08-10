@@ -16,6 +16,7 @@ class AbsenSiswa_Model extends Model
 
     protected $fillable = [
         'siswa_id',
+        'kelas_id',
         'status',
     ];
 

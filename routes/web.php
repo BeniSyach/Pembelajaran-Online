@@ -160,7 +160,9 @@ Route::post('/guru/edit_password/{guru:id}', [GuruController::class, 'edit_passw
 // Absen
 Route::get('/guru/absen',[AbsenGuruController::class,'index'])->middleware('is_guru');
 Route::get('/guru/absen/lihat',[AbsenGuruController::class,'lihat'])->middleware('is_guru');
+Route::get('/guru/absen/siswa',[AbsenGuruController::class,'absen_siswa'])->middleware('is_guru');
 Route::get('/guru/absen/{id}',[AbsenGuruController::class,'store'])->middleware('is_guru');
+Route::get('/guru/absen/siswa/{id}',[AbsenGuruController::class,'detail_absen_siswa'])->middleware('is_guru');
 
 // ==>Materi
 Route::post('/guru/edit_password/{guru:id}', [GuruController::class, 'edit_password'])->middleware('is_guru');

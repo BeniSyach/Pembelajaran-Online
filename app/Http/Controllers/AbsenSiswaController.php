@@ -51,6 +51,8 @@ class AbsenSiswaController extends Controller
         $get_tanggal_absen =AbsenSiswa_Model::where('idAbsen',$id)->latest()->first();
         $tanggal_absen = date('Y-m-d',strtotime($get_tanggal_absen['created_at']?? 'null' ));
 
+        $siswa = Siswa::firstWhere('id', session('siswa')->id);
+        $kelas = $siswa['kelas_id'];
 
         if($tanggal == $tanggal_absen)
         {
@@ -67,6 +69,7 @@ class AbsenSiswaController extends Controller
         }else{
             AbsenSiswa_Model::create([
                 'siswa_id' => $id,
+                'kelas_id' => $kelas,
                 'status' => 'hadir'
             ]);
             return redirect('/siswa/absen')->with('pesan', "
