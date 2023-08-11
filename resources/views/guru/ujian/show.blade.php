@@ -80,28 +80,28 @@
                                                                             <label
                                                                                 for="answer-{{ $soal->id }}-{{ substr($soal->pg_1, 0, 1) }}"
                                                                                 class="answer-text" style="color: #000;">
-                                                                                <span></span>{{ substr($soal->pg_1, 3, strlen($soal->pg_1)) }}
+                                                                                <span></span>{!! substr($soal->pg_1, 3, strlen($soal->pg_1)) !!}
                                                                             </label>
                                                                         </li>
                                                                         <li class="answer-number">
                                                                             <label
                                                                                 for="answer-{{ $soal->id }}-{{ substr($soal->pg_2, 0, 1) }}"
                                                                                 class="answer-text" style="color: #000;">
-                                                                                <span></span>{{ substr($soal->pg_2, 3, strlen($soal->pg_2)) }}
+                                                                                <span></span>{!! substr($soal->pg_2, 3, strlen($soal->pg_2)) !!}
                                                                             </label>
                                                                         </li>
                                                                         <li class="answer-number">
                                                                             <label
                                                                                 for="answer-{{ $soal->id }}-{{ substr($soal->pg_3, 0, 1) }}"
                                                                                 class="answer-text" style="color: #000;">
-                                                                                <span></span>{{ substr($soal->pg_3, 3, strlen($soal->pg_3)) }}
+                                                                                <span></span>{!! substr($soal->pg_3, 3, strlen($soal->pg_3)) !!}
                                                                             </label>
                                                                         </li>
                                                                         <li class="answer-number">
                                                                             <label
                                                                                 for="answer-{{ $soal->id }}-{{ substr($soal->pg_4, 0, 1) }}"
                                                                                 class="answer-text" style="color: #000;">
-                                                                                <span></span>{{ substr($soal->pg_4, 3, strlen($soal->pg_4)) }}
+                                                                                <span></span>{!! substr($soal->pg_4, 3, strlen($soal->pg_4)) !!}
                                                                             </label>
                                                                         </li>
                                                                         {{-- <li class="answer-number">

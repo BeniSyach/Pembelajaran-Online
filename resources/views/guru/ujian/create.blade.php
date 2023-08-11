@@ -107,8 +107,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon5">A</span>
                                                     </div>
-                                                    <input type="text" name="pg_1[]" class="form-control"
-                                                        placeholder="Opsi A" autocomplete="off" required>
+                                                    <textarea name="pg_1[]" cols="30" rows="2" class="summernote" wrap="hard"
+                                                         required> </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -119,8 +119,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon5">B</span>
                                                     </div>
-                                                    <input type="text" name="pg_2[]" class="form-control"
-                                                        placeholder="Opsi B" autocomplete="off" required>
+                                                    <textarea name="pg_2[]" cols="30" rows="2" class="summernote" wrap="hard" required> </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,8 +130,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon5">C</span>
                                                     </div>
-                                                    <input type="text" name="pg_3[]" class="form-control"
-                                                        placeholder="Opsi C" autocomplete="off" required>
+                                                    <textarea name="pg_3[]" cols="30" rows="2" class="summernote" wrap="hard" required> </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -143,8 +141,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon5">D</span>
                                                     </div>
-                                                    <input type="text" name="pg_4[]" class="form-control"
-                                                        placeholder="Opsi D" autocomplete="off" required>
+                                                    <textarea name="pg_4[]" cols="30" rows="2" class="summernote" wrap="hard" required> </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,8 +152,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon5">E</span>
                                                     </div>
-                                                    <input type="text" name="pg_5[]" class="form-control"
-                                                        placeholder="Opsi E" autocomplete="off" required>
+                                                    <textarea name="pg_5[]" cols="30" rows="2" class="summernote" wrap="hard" required> </textarea>
                                                 </div>
                                             </div>
                                         </div> --}}
@@ -319,7 +315,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon5">A</span>
                                         </div>
-                                        <input type="text" name="pg_1[]" class="form-control" placeholder="Opsi A" autocomplete="off" required>
+                                        <textarea name="pg_1[]" cols="30" rows="2" class="summernote" wrap="hard"
+                                                         required> </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -330,7 +327,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon5">B</span>
                                         </div>
-                                        <input type="text" name="pg_2[]" class="form-control" placeholder="Opsi B" autocomplete="off" required>
+                                        <textarea name="pg_2[]" cols="30" rows="2" class="summernote" wrap="hard" required> </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -341,7 +338,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon5">C</span>
                                         </div>
-                                        <input type="text" name="pg_3[]" class="form-control" placeholder="Opsi C" autocomplete="off" required>
+                                        <textarea name="pg_3[]" cols="30" rows="2" class="summernote" wrap="hard" required> </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -352,7 +349,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon5">D</span>
                                         </div>
-                                        <input type="text" name="pg_4[]" class="form-control" placeholder="Opsi D" autocomplete="off" required>
+                                        <textarea name="pg_4[]" cols="30" rows="2" class="summernote" wrap="hard" required> </textarea>
                                     </div>
                                 </div>
                             </div>

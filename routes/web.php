@@ -44,7 +44,7 @@ use App\Http\Controllers\UjianSiswaController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/kontak',[KontakController::class, 'index']);
 
-Route::get('/login', [AuthController::class, 'index']);
+Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/install', [AuthController::class, 'install']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::get('/recovery', [AuthController::class, 'recovery']);
