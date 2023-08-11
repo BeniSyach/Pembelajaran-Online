@@ -241,6 +241,7 @@
                                                             <th>Benar</th>
                                                             <th>Salah</th>
                                                             <th>Tidak Dijawab</th>
+                                                            <th>Nilai</th>
                                                             <th>opsi</th>
                                                         </tr>
                                                     </thead>
@@ -275,6 +276,7 @@
                                                                     <td>{{ $benar }}</td>
                                                                     <td>{{ $salah }}</td>
                                                                     <td>{{ $tidakDijawab }}</td>
+                                                                    <td>{{ ($benar/($benar+$salah)*100) }}</td>
                                                                     <td>
                                                                         <a href="{{ url("/guru/ujian/" . $ujian->kode . "/" . $s->siswa->id) }}" class="btn btn-info btn-sm"><span data-feather="eye"></span></a>
                                                                     </td>

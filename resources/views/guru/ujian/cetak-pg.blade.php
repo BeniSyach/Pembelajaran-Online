@@ -36,6 +36,7 @@
                 <th>Benar</th>
                 <th>Salah</th>
                 <th>Tidak Dijawab</th>
+                <th>Nilai</th>
             </tr>
         </thead>
         <tbody>
@@ -44,7 +45,7 @@
                     <tr class="text-center">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $s->siswa->nama_siswa }}</td>
-                        <td colspan="3">Belum Mengerjakan Ujian</td>
+                        <td colspan="4">Belum Mengerjakan Ujian</td>
                     </tr>
                 @else
                     @php
@@ -69,6 +70,7 @@
                         <td>{{ $benar }}</td>
                         <td>{{ $salah }}</td>
                         <td>{{ $tidakDijawab }}</td>
+                        <td>{{ ($benar/($benar+$salah)*100) }}</td>
                     </tr> 
                 @endif
             @endforeach

@@ -140,7 +140,6 @@ class BelajarSiswaController extends Controller
         {
                 $ujian = Ujian::where('materi_id',$belajar->id)->where('jenis',0)->first();
 
-
                 $pg_siswa = PgSiswa::where('kode', $ujian->kode)
                 ->where('siswa_id', session('siswa')->id)
                 ->get();

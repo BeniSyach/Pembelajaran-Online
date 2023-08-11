@@ -5,6 +5,7 @@
             <th>Nama Siswa</th>
             <th>Benar</th>
             <th>Salah</th>
+            <th>Nilai</th>
             <th>Tidak Dijawab</th>
         </tr>
     </thead>
@@ -41,6 +42,7 @@
                     <td>{{ $benar }}</td>
                     <td>{{ $salah }}</td>
                     <td>{{ $tidakDijawab }}</td>
+                    <td>{{($benar/($benar+$salah)*100) }}</td>
                 </tr> 
             @endif
         @endforeach
