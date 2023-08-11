@@ -174,6 +174,7 @@ Route::post('/guru/nilai_tugas/{id}/{kode}', [TugasGuruController::class, 'nilai
 // ==>Ujian
 Route::resource('/guru/ujian', UjianGuruController::class)->middleware('is_guru');
 Route::post('/guru/pg_excel', [UjianGuruController::class, 'pg_excel'])->middleware('is_guru');
+Route::get('/guru/ujian_pg/{kode}/{siswa_id}', [UjianGuruController::class, 'ulangi_pg_siswa'])->middleware('is_guru');
 Route::get('/guru/ujian/{kode}/{siswa_id}', [UjianGuruController::class, 'pg_siswa'])->middleware('is_guru');
 Route::get('/guru/ujian_cetak/{kode}', [UjianGuruController::class, 'ujian_cetak'])->middleware('is_guru');
 Route::get('/guru/ujian_ekspor/{kode}', [UjianGuruController::class, 'ujian_ekspor'])->middleware('is_guru');

@@ -432,6 +432,20 @@ class UjianGuruController extends Controller
         ]);
     }
 
+    public function ulangi_pg_siswa($kode,$siswa_id)
+    {
+        return redirect('/guru/ujian')->with('pesan', "
+            <script>
+                swal({
+                    title: 'Success!',
+                    text: 'Data jawaban Siswa Di Hapus',
+                    type: 'success',
+                    padding: '2em'
+                })
+            </script>
+        ");
+    }
+
     public function show_essay(Ujian $ujian)
     {
         return view('guru.ujian.show-essay', [

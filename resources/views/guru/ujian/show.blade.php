@@ -277,8 +277,12 @@
                                                                     <td>{{ $salah }}</td>
                                                                     <td>{{ $tidakDijawab }}</td>
                                                                     <td>{{ ($benar/($benar+$salah)*100) }}</td>
-                                                                    <td>
+                                                                    <td class="d-flex justify-content-center">
                                                                         <a href="{{ url("/guru/ujian/" . $ujian->kode . "/" . $s->siswa->id) }}" class="btn btn-info btn-sm"><span data-feather="eye"></span></a>
+
+                                                                        <form id="ulangi_pg_siswa" action="{{ url("/guru/ujian_pg/" . $ujian->kode . "/" . $s->siswa->id) }}" method="get">
+                                                                        <a href="#" class="btn btn-warning btn-sm ulangi"><span data-feather="refresh-cw"></span></a>
+                                                                        </form>
                                                                     </td>
                                                                 </tr> 
                                                             @endif
@@ -302,6 +306,10 @@
         </div>
         @include('template.footer')
     </div>
+
+    <script>
+         $(".ulangi").on("click",function(a){a.preventDefault(),swal({title:"Ulangi Ujian Siswa ?",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:" ya, ulangi",padding:"2em"}).then(function(a){a.value&&$("#ulangi_pg_siswa").submit()})});
+    </script>
     <!--  END CONTENT AREA  -->
     {!! session('pesan') !!}
     @include('ew.ew-t-p')
