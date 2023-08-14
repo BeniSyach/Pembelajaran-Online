@@ -205,7 +205,7 @@
                                                             @if ($s->selesai == null)
                                                                 <tr class="text-center">
                                                                     <td>{{ $s->siswa->nama_siswa }}</td>
-                                                                    <td colspan="4">Belum Mengerjakan Ujian</td>
+                                                                    <td colspan="4">Belum Mengerjakan Tugas</td>
                                                                 </tr>
                                                             @else
                                                                 <tr class="text-center">

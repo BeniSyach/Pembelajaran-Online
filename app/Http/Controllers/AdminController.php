@@ -226,6 +226,7 @@ class AdminController extends Controller
             array_push($siswa, [
 
                 'nis' => $nis,
+                'nis_final' => $request['nis_final'][$index],
                 'nama_siswa' => $request['nama_siswa'][$index],
                 'gender' => $request['gender'][$index],
                 'kelas_id' => $request['kelas_id'][$index],

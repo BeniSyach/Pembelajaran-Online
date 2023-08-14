@@ -9,7 +9,7 @@
                 <div class="col-lg-12 layout-spacing">
                     <div class="widget shadow p-3" style="min-height: 500px;">
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-9">
                                 <div class="widget-heading">
                                     <h5 class="">Tugas / Quiz</h5>
                                     <a href="javascript:void(0)" class="btn btn-primary mt-3" data-toggle="modal"
@@ -22,6 +22,7 @@
                                                 <th>Nama</th>
                                                 <th>Mapel</th>
                                                 <th>Kelas</th>
+                                                <th>Jenis Ujian</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
@@ -32,9 +33,19 @@
                                                     <td>{{ $u->mapel->nama_mapel }}</td>
                                                     <td>{{ $u->kelas->nama_kelas }}</td>
                                                     <td>
+                                                        @if($u->jenis == 0)
+                                                            Pilihan Ganda
+                                                        @else
+                                                            Essay
+                                                        @endif
+                                                    </td>
+                                                    <td>
                                                         @if ($u->jenis == 0)
                                                             <a href="{{ url('/guru/ujian/' . $u->kode) }}" class="btn btn-primary btn-sm">
                                                                 <span data-feather="eye"></span>
+                                                            </a>
+                                                            <a href="{{ url('/guru/ujian_edit/' . $u->kode) }}" class="btn btn-warning btn-sm">
+                                                                <span data-feather="edit"></span>
                                                             </a>
                                                         @endif
 
@@ -42,7 +53,29 @@
                                                             <a href="{{ url('/guru/ujian_essay/' . $u->kode) }}" class="btn btn-primary btn-sm">
                                                                 <span data-feather="eye"></span>
                                                             </a>
+                                                            <a href="{{ url('/guru/ujian_essay_edit/' . $u->kode) }}" class="btn btn-warning btn-sm">
+                                                                <span data-feather="edit"></span>
+                                                            </a>
                                                         @endif
+
+                                                        @if($u->kunci_ujian==1)
+                                                        <form id="buka_ujian{{ $loop->iteration }}" action="{{ url('/guru/kunci_ujian/' . $u->kode) }}" method="get"
+                                                            class="d-inline">
+                                                            @csrf
+                                                            <a class="btn btn-warning btn-sm btn-unlock{{ $loop->iteration }}"
+                                                                href="javascript:void(0);"><span
+                                                                    data-feather="lock"></span></a>
+                                                        </form>
+                                                        @else
+                                                        <form id="kunci_ujian{{ $loop->iteration }}"  action="{{ url('/guru/buka_ujian/' . $u->kode) }}" method="get"
+                                                            class="d-inline" >
+                                                            @csrf
+                                                            <a class="btn btn-info btn-sm btn-kunci{{ $loop->iteration }}"
+                                                                href="javascript:void(0);"><span
+                                                                    data-feather="unlock"></span></a>
+                                                        </form>
+                                                        @endif       
+                                                        
                                                         <form action="{{ url('/guru/ujian/' . $u->kode) }}" method="post" class="d-inline" id="formHapus">
                                                             @csrf
                                                             @method('DELETE')
@@ -57,7 +90,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="col-lg-5 d-flex">
+                            <div class="col-lg-3 d-flex">
                                 <img src="{{ url('/assets/img') }}/ujian.svg" style="width: 100%;">
                             </div>
                         </div>
@@ -97,6 +130,12 @@
 
     <script>
         $(document).ready(function(){$(".btn-hapus").on("click",function(e){var t=$(this);e.preventDefault(),swal({title:"yakin di hapus?",text:"data yang berkaitan akan dihapus dan tidak bisa di kembalikan!",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:"ya, hapus",padding:"2em"}).then(function(e){e.value&&t.parent("form").submit()})}),$("#datatable-table").DataTable({scrollY:"300px",scrollX:!0,scrollCollapse:!0,paging:!0,oLanguage:{oPaginate:{sPrevious:'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',sNext:'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'},sInfo:"tampilkan halaman _PAGE_ dari _PAGES_",sSearch:'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',sSearchPlaceholder:"Cari Data...",sLengthMenu:"Hasil :  _MENU_"},stripeClasses:[],lengthMenu:[[-1,5,10,25,50],["All",5,10,25,50]]})});
+
+        @foreach ($ujian as $u)
+        $(".btn-kunci{{ $loop->iteration }}").on("click",function(a){a.preventDefault(),swal({title:"kunci ujian?",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:" ya, kunci ujian",padding:"2em"}).then(function(a){a.value&&$("#kunci_ujian{{ $loop->iteration }}").submit()})});
+
+        $(".btn-unlock{{ $loop->iteration }}").on("click",function(a){a.preventDefault(),swal({title:"Buka ujian ?",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:" ya, Buka ujian",padding:"2em"}).then(function(a){a.value&&$("#buka_ujian{{ $loop->iteration }}").submit()})});
+        @endforeach
     </script>
 
     {!! session('pesan') !!}

@@ -7,7 +7,7 @@
             <div class="user-info">
                 <img src="{{ asset('assets/user-profile/' . $siswa->avatar) }}" alt="avatar" class="bg-white">
                 <h6 class="">{{ $siswa->nama_siswa }}</h6>
-                <p class="">SISWA E-MesraMedia</p>
+                <p class="">SISWA KELAS : {{$siswa->kelas->nama_kelas}}</p>
             </div>
         </div>
         <div class="shadow-bottom"></div>

@@ -22,6 +22,7 @@
                             <div class="user-info-list" style="margin-top: -10px;">
                                 <div class="text-center">
                                     <p>SISWA E-MesraMedia</p>
+                                    <p> KELAS : {{$siswa->kelas->nama_kelas}} </p>
                                     <ul class="contacts-block list-unstyled" style="margin-top: -5px;">
                                         <li class="contacts-block__item">
                                             <span data-feather="calendar"></span>
@@ -51,6 +52,10 @@
                                 <div class="form-group">
                                     <label for="">Nama</label>
                                     <input type="text" name="nama_siswa" id="nama_siswa" value="{{ old('nama_siswa', $siswa->nama_siswa) }}" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Kelas</label>
+                                    <input type="text" name="nama_kelas" id="nama_kelas" value="{{ old('nama_kelas', $siswa->kelas->nama_kelas) }}" class="form-control" required readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>

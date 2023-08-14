@@ -27,6 +27,7 @@
                                     <thead>
                                         <tr>
                                             <th>No Induk</th>
+                                            <th>Nis Final</th>
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Kelas</th>
@@ -38,6 +39,7 @@
                                         @foreach ($siswa as $s)
                                             <tr>
                                                 <td>{{  $s->nis }}</td>
+                                                <td>{{  $s->nis_final }}</td>
                                                 <td>{{  $s->nama_siswa }}</td>
                                                 <td>{{  $s->email }}</td>
                                                 <td>{{  $s->kelas->nama_kelas }}</td>
@@ -83,6 +85,7 @@
                         <thead>
                             <tr>
                                 <th>No Induk</th>
+                                <th>Nis Final</th>
                                 <th>Nama</th>
                                 <th>Gender</th>
                                 <th>Email</th>
@@ -93,6 +96,7 @@
                         <tbody id="tbody-siswa">
                             <tr>
                                 <td><input type="text" name="nis[]" required style="border: none; background: transparent; width: 100%; height: 100%;"></td>
+                                <td><input type="text" name="nis_final[]" required style="border: none; background: transparent; width: 100%; height: 100%;"></td>
                                 <td><input type="text" name="nama_siswa[]" required style="border: none; background: transparent; width: 100%; height: 100%;"></td>
                                 <td>
                                     <select name="gender[]" required style="border: none; background: transparent; width: 100%; height: 100%;">

@@ -3,6 +3,7 @@
         <tr>
             <th>No</th>
             <th>NIS</th>
+            <th>NIS Final</th>
             <th>Nama Siswa</th>
             <th>Gender</th>
             <th>Kelas</th>
@@ -14,6 +15,7 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $s->nis }}</td>
+                <td>{{ $s->nis_final }}</td>
                 <td>{{ $s->nama_siswa }}</td>
                 <td>{{ $s->gender }}</td>
                 <td>{{ $s->kelas->nama_kelas }}</td>

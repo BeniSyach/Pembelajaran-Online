@@ -250,7 +250,7 @@
                                                             @if ($s->selesai == null)
                                                                 <tr class="text-center">
                                                                     <td>{{ $s->siswa->nama_siswa }}</td>
-                                                                    <td colspan="4">Belum Mengerjakan Ujian</td>
+                                                                    <td colspan="4">Belum Mengerjakan Tugas</td>
                                                                 </tr>
                                                             @else
                                                             @php
@@ -308,7 +308,7 @@
     </div>
 
     <script>
-         $(".ulangi").on("click",function(a){a.preventDefault(),swal({title:"Ulangi Ujian Siswa ?",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:" ya, ulangi",padding:"2em"}).then(function(a){a.value&&$("#ulangi_pg_siswa").submit()})});
+         $(".ulangi").on("click",function(a){a.preventDefault(),swal({title:"Ulangi Tugas Siswa ?",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:" ya, ulangi",padding:"2em"}).then(function(a){a.value&&$("#ulangi_pg_siswa").submit()})});
     </script>
     <!--  END CONTENT AREA  -->
     {!! session('pesan') !!}

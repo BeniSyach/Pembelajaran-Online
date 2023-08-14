@@ -147,6 +147,7 @@ class UjianGuruController extends Controller
             'jam' => $request->jam,
             'menit' => $request->menit,
             'acak' => $request->acak ,
+            'kunci_ujian' => 1,
         ];
 
         $detail_ujian = [];
@@ -247,6 +248,7 @@ class UjianGuruController extends Controller
             'jam' => $request->e_jam,
             'menit' => $request->e_menit,
             'acak' => $request->e_acak,
+            'kunci_ujian' => 1,
         ];
 
         $email_siswa = '';
@@ -333,6 +335,7 @@ class UjianGuruController extends Controller
             'materi_id' => $request->materi,
             'jam' => $request->jam,
             'menit' => $request->menit,
+            'kunci_ujian' => 1,
         ];
 
         $detail_ujian = [];
@@ -434,7 +437,15 @@ class UjianGuruController extends Controller
 
     public function ulangi_pg_siswa($kode,$siswa_id)
     {
-        return redirect('/guru/ujian')->with('pesan', "
+
+        $hapus_pg_siswa = PgSiswa::where('kode',$kode)->where('siswa_id', $siswa_id)->delete();
+        $data = [
+            'waktu_berakhir' => null,
+            'selesai' => null
+        ];
+        $hapus_waktu_pg_siswa = WaktuUjian::where('kode',$kode)->where('siswa_id', $siswa_id)->update($data);
+
+        return redirect("/guru/ujian/$kode")->with('pesan', "
             <script>
                 swal({
                     title: 'Success!',
@@ -578,5 +589,101 @@ class UjianGuruController extends Controller
         $ujian =  Ujian::firstWhere('kode', $kode);
         $nama_kelas = $ujian->kelas->nama_kelas;
         return Excel::download(new EssayExport($ujian), "nilai-essay-kelas-$nama_kelas.xlsx");
+    }
+
+    public function edit_pg($kode)
+    {
+        $tugas = DetailUjian::where('kode',$kode)->get();
+        return view('guru.ujian.edit-pg', [
+            'title' => 'Edit Tugas Pilihan Ganda',
+            'plugin' => '
+                <link href="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
+                <script src="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.js"></script>
+                <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+                <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+            ',
+            'menu' => [
+                'menu' => 'ujian',
+                'expanded' => 'ujian'
+            ],
+            'guru' => Guru::firstWhere('id', session('guru')->id),
+            'guru_kelas' => Gurukelas::where('guru_id', session('guru')->id)->get(),
+            'guru_mapel' => Gurumapel::where('guru_id', session('guru')->id)->get(),
+            'guru_materi' => KmMateri::where('guru_id', session('guru')->id)->get(),
+            'tugas' => $tugas
+        ]);
+    }
+
+    public function update_pg(Request $request)
+    {
+        return redirect('/guru/ujian')->with('pesan', "
+        <script>
+            swal({
+                title: 'Success!',
+                text: 'Tugas pilihan Ganda berhasil di Edit!',
+                type: 'success',
+                padding: '2em'
+            })
+        </script>
+    ");
+    }
+
+    public function edit_essay($kode)
+    {
+
+    }
+
+    public function update_essay(Request $request)
+    {
+        return redirect('/guru/ujian')->with('pesan', "
+        <script>
+            swal({
+                title: 'Success!',
+                text: 'Tugas Essay berhasil di Edit!',
+                type: 'success',
+                padding: '2em'
+            })
+        </script>
+    ");
+    }
+
+    public function kunci_ujian($kode)
+    {
+        $data = [
+            'kunci_ujian' => 0
+        ];
+
+        $hapus_waktu_pg_siswa = Ujian::where('kode',$kode)->where('guru_id', session('guru')->id)->update($data);
+
+        return redirect('/guru/ujian')->with('pesan', "
+            <script>
+                swal({
+                    title: 'Success!',
+                    text: 'ujian di buka!',
+                    type: 'success',
+                    padding: '2em'
+                })
+            </script>
+        ");
+    }
+
+    public function buka_ujian($kode)
+    {
+        $data = [
+            'kunci_ujian' => 1
+        ];
+
+        $hapus_waktu_pg_siswa = Ujian::where('kode',$kode)->where('guru_id', session('guru')->id)->update($data);
+
+        return redirect('/guru/ujian')->with('pesan', "
+            <script>
+                swal({
+                    title: 'Success!',
+                    text: 'ujian di kunci!',
+                    type: 'success',
+                    padding: '2em'
+                })
+            </script>
+        ");
     }
 }

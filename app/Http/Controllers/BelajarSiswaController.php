@@ -46,7 +46,7 @@ class BelajarSiswaController extends Controller
                 'expanded' => 'belajar'
             ],
             'siswa' => Siswa::firstWhere('id', session('siswa')->id),
-            'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->get(),
+            'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->where('kunci_materi','0')->get(),
             'notif_tugas' => $notif_tugas,
             'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
             'notif_ujian' => $notif_ujian
@@ -135,7 +135,7 @@ class BelajarSiswaController extends Controller
      
         
         // Soal Pilihan Ganda
-        $check_pg = is_null(Ujian::where('materi_id',$belajar->id)->where('jenis',0)->first());
+        $check_pg = is_null(Ujian::where('materi_id',$belajar->id)->where('jenis',0)->where('kunci_ujian',0)->first());
         if($check_pg == false)
         {
                 $ujian = Ujian::where('materi_id',$belajar->id)->where('jenis',0)->first();
@@ -184,7 +184,7 @@ class BelajarSiswaController extends Controller
         
 
         // Soal Essay 
-        $chek_essay = is_null(Ujian::where('materi_id',$belajar->id)->where('jenis',1)->first());
+        $chek_essay = is_null(Ujian::where('materi_id',$belajar->id)->where('jenis',1)->where('kunci_ujian',0)->first());
 
         if($chek_essay == false)
         {

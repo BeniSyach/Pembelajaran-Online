@@ -167,9 +167,15 @@ Route::get('/guru/absen/siswa/{id}',[AbsenGuruController::class,'detail_absen_si
 // ==>Materi
 Route::post('/guru/edit_password/{guru:id}', [GuruController::class, 'edit_password'])->middleware('is_guru');
 Route::resource('/guru/materi', MateriGuruController::class)->middleware('is_guru');
+Route::get('/guru/kunci_materi/{kode}', [MateriGuruController::class, 'kunci_materi'])->middleware('is_guru');
+Route::get('/guru/buka_materi/{kode}', [MateriGuruController::class, 'buka_materi'])->middleware('is_guru');
+
+// tugas
 Route::resource('/guru/tugas', TugasGuruController::class)->middleware('is_guru');
 Route::get('/guru/tugas_siswa/{id}', [TugasGuruController::class, 'tugas_siswa'])->middleware('is_guru');
+Route::get('/guru/tugas_siswa/{id}', [TugasGuruController::class, 'tugas_siswa'])->middleware('is_guru');
 Route::post('/guru/nilai_tugas/{id}/{kode}', [TugasGuruController::class, 'nilai_tugas'])->middleware('is_guru');
+
 
 // ==>Ujian
 Route::resource('/guru/ujian', UjianGuruController::class)->middleware('is_guru');
@@ -185,6 +191,11 @@ Route::get('/guru/ujian_essay/{kode}/{siswa_id}', [UjianGuruController::class, '
 Route::post('/guru/nilai_essay', [UjianGuruController::class, 'nilai_essay'])->middleware('is_guru');
 Route::get('/guru/essay_cetak/{kode}', [UjianGuruController::class, 'essay_cetak'])->middleware('is_guru');
 Route::get('/guru/essay_ekspor/{kode}', [UjianGuruController::class, 'essay_ekspor'])->middleware('is_guru');
+Route::get('/guru/ujian_edit/{kode}',[UjianGuruController::class,'edit_pg'])->middleware('is_guru');
+Route::get('/guru/ujian_essay_edit/{kode}',[UjianGuruController::class,'edit_essay'])->middleware('is_guru');
+Route::get('/guru/kunci_ujian/{kode}', [UjianGuruController::class, 'kunci_ujian'])->middleware('is_guru');
+Route::get('/guru/buka_ujian/{kode}', [UjianGuruController::class, 'buka_ujian'])->middleware('is_guru');
+
 // END ROUTE GURU
 
 

@@ -102,6 +102,7 @@ class MateriGuruController extends Controller
         $validateMateri['guru_id'] = session('guru')->id;
         $validateMateri['kelas_id'] = $request->kelas;
         $validateMateri['mapel_id'] = $request->mapel;
+        $validateMateri['kunci_materi'] = 1;
 
         
 
@@ -279,6 +280,46 @@ class MateriGuruController extends Controller
                 swal({
                     title: 'Success!',
                     text: 'materi di hapus!',
+                    type: 'success',
+                    padding: '2em'
+                })
+            </script>
+        ");
+    }
+
+    public function kunci_materi($kode)
+    {
+        $data = [
+            'kunci_materi' => 0
+        ];
+
+        $hapus_waktu_pg_siswa = KmMateri::where('kode',$kode)->where('guru_id', session('guru')->id)->update($data);
+
+        return redirect('/guru/materi')->with('pesan', "
+            <script>
+                swal({
+                    title: 'Success!',
+                    text: 'materi di buka!',
+                    type: 'success',
+                    padding: '2em'
+                })
+            </script>
+        ");
+    }
+
+    public function buka_materi($kode)
+    {
+        $data = [
+            'kunci_materi' => 1
+        ];
+
+        $hapus_waktu_pg_siswa = KmMateri::where('kode',$kode)->where('guru_id', session('guru')->id)->update($data);
+
+        return redirect('/guru/materi')->with('pesan', "
+            <script>
+                swal({
+                    title: 'Success!',
+                    text: 'materi di kunci!',
                     type: 'success',
                     padding: '2em'
                 })
