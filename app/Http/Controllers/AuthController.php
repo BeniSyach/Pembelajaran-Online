@@ -10,6 +10,8 @@ use App\Models\Siswa;
 use App\Models\Token;
 use Illuminate\Support\Str;
 use App\Mail\VerifikasiAkun;
+use App\Models\Ujian;
+use App\Models\WaktuUjian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -341,10 +343,30 @@ class AuthController extends Controller
         } else {
             Siswa::where('email', $token->email)
                 ->update(['is_active' => 1]);
+
+            $getIdKelas = Siswa::where('email', $token->email)->first();
+            $kelas = $getIdKelas['kelas_id'];
+            $id_siswa = $getIdKelas['id'];
+
+            $get_ujian = Ujian::where('kelas_id', $kelas)->get();
+            $tambahSiswaBaruUjian = [];
+            foreach($get_ujian as $ujian){
+                array_push($tambahSiswaBaruUjian,[
+                    'kode' => $ujian['kode'],
+                    'siswa_id' => $id_siswa,
+                    'waktu_berakhir' => null,
+                    'selesai' => null
+                ]);
+            }
+
+            WaktuUjian::insert($tambahSiswaBaruUjian);
+
         }
 
         Token::where('id', $token->id)
             ->delete();
+
+        
 
         return redirect('/login')->with('pesan', "
             <script>

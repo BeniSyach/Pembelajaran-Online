@@ -46,7 +46,7 @@ class BelajarSiswaController extends Controller
                 'expanded' => 'belajar'
             ],
             'siswa' => Siswa::firstWhere('id', session('siswa')->id),
-            'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->where('kunci_materi','0')->get(),
+            'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->get(),
             'notif_tugas' => $notif_tugas,
             'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
             'notif_ujian' => $notif_ujian
@@ -123,9 +123,38 @@ class BelajarSiswaController extends Controller
      */
     public function show(Materi $belajar)
     {
+        if($belajar->kunci_materi == 1)
+        {
+            return redirect('/siswa/belajar')->with('pesan', "
+            <script>
+                swal({
+                    title: 'Gagal!!',
+                    text: 'Materi Dikunci Oleh Guru',
+                    type: 'error',
+                    padding: '2em'
+                })
+            </script>
+            ");
+        }
+
         Notifikasi::where('siswa_id', session('siswa')->id)
             ->where('kode', $belajar->kode)
             ->delete();
+            $ambil_notif_ujian = is_null(WaktuUjian::where('siswa_id', session('siswa')->id)
+            ->where('selesai', null)
+            ->get());
+            // dd($ambil_notif_ujian);
+            if($ambil_notif_ujian == false)
+            {
+                $ujian = Ujian::where('materi_id',$belajar->id)->first();
+                $insertUjianSiswa = [
+                    'kode' => $ujian->kode,
+                    'siswa_id' =>  session('siswa')->id,
+                    'waktu_berakhir' => null ,
+                    'selesai' => null
+                ];
+                WaktuUjian::insert($insertUjianSiswa);
+            }
         $notif_ujian = WaktuUjian::where('siswa_id', session('siswa')->id)
             ->where('selesai', null)
             ->get();
@@ -203,7 +232,7 @@ class BelajarSiswaController extends Controller
                     ]);
                 }
                 $timestamp = strtotime(date('Y-m-d G:i', time()));
-                $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
+                $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian_essay->jam hour +$ujian_essay->menit minute", $timestamp));
                 $data_waktu_ujian = [
                     'waktu_berakhir' => $waktu_berakhir
                 ];

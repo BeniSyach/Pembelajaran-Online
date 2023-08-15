@@ -41,7 +41,7 @@ class MateriGuruController extends Controller
                 'expanded' => 'materi'
             ],
             'guru' => Guru::firstWhere('id', session('guru')->id),
-            'materi' => KmMateri::all()
+            'materi' => KmMateri::where('guru_id', session('guru')->id)->get()
         ]);
     }
 

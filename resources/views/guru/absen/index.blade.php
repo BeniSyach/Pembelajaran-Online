@@ -30,7 +30,7 @@
                                                     @if ($tanggal_absen==date('Y-m-d'))
                                                     <td>
                                                         <a href="#" class="btn btn-light" style="pointer-events: none;
-                                                        cursor: default;"><span data-feather="eye"></span> Sudah Absen</a>
+                                                        cursor: default;"><span data-feather="eye-off"></span> Sudah Absen</a>
                                                               <a href="{{ url("/guru/absen/lihat") }}" class="btn btn-success my-2 mx-2"><span data-feather="book"></span> lihat</a>
                                                     </td>
                                                     @else
