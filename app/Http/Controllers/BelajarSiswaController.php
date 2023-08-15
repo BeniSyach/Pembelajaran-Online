@@ -140,21 +140,34 @@ class BelajarSiswaController extends Controller
         Notifikasi::where('siswa_id', session('siswa')->id)
             ->where('kode', $belajar->kode)
             ->delete();
-            $ambil_notif_ujian = is_null(WaktuUjian::where('siswa_id', session('siswa')->id)
-            ->where('selesai', null)
-            ->get());
-            // dd($ambil_notif_ujian);
-            if($ambil_notif_ujian == false)
+
+            $chek_ujian = is_null(Ujian::where('materi_id',$belajar->id)->first());
+            if($chek_ujian == false)
             {
-                $ujian = Ujian::where('materi_id',$belajar->id)->first();
-                $insertUjianSiswa = [
-                    'kode' => $ujian->kode,
-                    'siswa_id' =>  session('siswa')->id,
-                    'waktu_berakhir' => null ,
-                    'selesai' => null
-                ];
-                WaktuUjian::insert($insertUjianSiswa);
+                $kode_ujian = Ujian::where('materi_id',$belajar->id)->first();
+
+                $ambil_notif_ujian = is_null(WaktuUjian::where('siswa_id', session('siswa')->id)
+                ->where('kode', $kode_ujian->kode)
+                ->first());
+                // dd($ambil_notif_ujian);
+                if($ambil_notif_ujian == true)
+                {
+                    $ujian = Ujian::where('materi_id',$belajar->id)->get();
+                    $tambahUjianSiswa = [];
+                    foreach($ujian as $u)
+                    {
+                        array_push($tambahUjianSiswa,[
+                            'kode' => $u->kode,
+                            'siswa_id' =>  session('siswa')->id,
+                            'waktu_berakhir' => null ,
+                            'selesai' => null
+                        ]);
+                     
+                    }
+                    WaktuUjian::insert($tambahUjianSiswa);
+                }
             }
+
         $notif_ujian = WaktuUjian::where('siswa_id', session('siswa')->id)
             ->where('selesai', null)
             ->get();

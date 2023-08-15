@@ -192,7 +192,9 @@ Route::post('/guru/nilai_essay', [UjianGuruController::class, 'nilai_essay'])->m
 Route::get('/guru/essay_cetak/{kode}', [UjianGuruController::class, 'essay_cetak'])->middleware('is_guru');
 Route::get('/guru/essay_ekspor/{kode}', [UjianGuruController::class, 'essay_ekspor'])->middleware('is_guru');
 Route::get('/guru/ujian_edit/{kode}',[UjianGuruController::class,'edit_pg'])->middleware('is_guru');
+Route::post('/guru/ujian_update/{kode}',[UjianGuruController::class,'update_pg'])->middleware('is_guru');
 Route::get('/guru/ujian_essay_edit/{kode}',[UjianGuruController::class,'edit_essay'])->middleware('is_guru');
+Route::post('/guru/ujian_essay_update/{kode}',[UjianGuruController::class,'update_essay'])->middleware('is_guru');
 Route::get('/guru/kunci_ujian/{kode}', [UjianGuruController::class, 'kunci_ujian'])->middleware('is_guru');
 Route::get('/guru/buka_ujian/{kode}', [UjianGuruController::class, 'buka_ujian'])->middleware('is_guru');
 

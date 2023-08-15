@@ -593,7 +593,10 @@ class UjianGuruController extends Controller
 
     public function edit_pg($kode)
     {
-        $tugas = DetailUjian::where('kode',$kode)->get();
+        $tugas = Ujian::where('kode',$kode)->first();
+        $detail_tugas = DetailUjian::where('kode',$kode)->get();
+        $jumlah_tugas = DetailUjian::where('kode', $kode)->count();
+        // dd($jumlah_tugas);
         return view('guru.ujian.edit-pg', [
             'title' => 'Edit Tugas Pilihan Ganda',
             'plugin' => '
@@ -610,12 +613,65 @@ class UjianGuruController extends Controller
             'guru_kelas' => Gurukelas::where('guru_id', session('guru')->id)->get(),
             'guru_mapel' => Gurumapel::where('guru_id', session('guru')->id)->get(),
             'guru_materi' => KmMateri::where('guru_id', session('guru')->id)->get(),
-            'tugas' => $tugas
+            'tugas' => $tugas,
+            'detail_tugas' => $detail_tugas,
+            'jumlah_tugas' => $jumlah_tugas
         ]);
     }
 
-    public function update_pg(Request $request)
+    public function update_pg(Request $request, $kode)
     {
+
+        $delete_ujian = DetailUjian::where('kode',$kode)->delete();
+
+        $siswa = Siswa::where('kelas_id', $request->kelas)->get();
+        if ($siswa->count() == 0) {
+            return redirect('/guru/ujian/create')->with('pesan', "
+                <script>
+                    swal({
+                        title: 'Error!',
+                        text: 'belum ada siswa di kelas tersebut!',
+                        type: 'error',
+                        padding: '2em'
+                    })
+                </script>
+            ")->withInput();
+        }
+
+        $ujian = [
+            'nama' => $request->nama,
+            'jenis' => 0,
+            'guru_id' => session('guru')->id,
+            'kelas_id' => $request->kelas,
+            'mapel_id' => $request->mapel,
+            'materi_id' => $request->materi,
+            'jam' => $request->jam,
+            'menit' => $request->menit,
+            'acak' => $request->acak ,
+            'kunci_ujian' => 1,
+        ];
+
+        $detail_ujian = [];
+        $index = 0;
+        $nama_soal =  $request->soal;
+        foreach ($nama_soal as $soal) {
+            array_push($detail_ujian, [
+                'kode' => $kode,
+                'soal' => $soal,
+                'pg_1' => 'A. ' . $request->pg_1[$index],
+                'pg_2' => 'B. ' . $request->pg_2[$index],
+                'pg_3' => 'C. ' . $request->pg_3[$index],
+                'pg_4' => 'D. ' . $request->pg_4[$index],
+                // 'pg_5' => 'E. ' . $request->pg_5[$index],
+                'jawaban' => $request->jawaban[$index]
+            ]);
+
+            $index++;
+        }
+
+        Ujian::where('kode',$kode)->update($ujian);
+        DetailUjian::insert($detail_ujian);
+
         return redirect('/guru/ujian')->with('pesan', "
         <script>
             swal({
@@ -630,11 +686,77 @@ class UjianGuruController extends Controller
 
     public function edit_essay($kode)
     {
-
+        $tugas = Ujian::where('kode',$kode)->first();
+        $detail_tugas = DetailEssay::where('kode',$kode)->get();
+        $jumlah_tugas = DetailEssay::where('kode', $kode)->count();
+        return view('guru.ujian.edit-essay', [
+            'title' => 'Tambah Tugas Essay',
+            'plugin' => '
+                <link href="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" />
+                <script src="' . url("/assets/backend") . '/plugins/file-upload/file-upload-with-preview.min.js"></script>
+                <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+                <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+            ',
+            'menu' => [
+                'menu' => 'ujian',
+                'expanded' => 'ujian'
+            ],
+            'guru' => Guru::firstWhere('id', session('guru')->id),
+            'guru_kelas' => Gurukelas::where('guru_id', session('guru')->id)->get(),
+            'guru_mapel' => Gurumapel::where('guru_id', session('guru')->id)->get(),
+            'guru_materi' => KmMateri::where('guru_id', session('guru')->id)->get(),
+            'tugas' => $tugas,
+            'detail_tugas' => $detail_tugas,
+            'jumlah_tugas' => $jumlah_tugas
+        ]);
     }
 
-    public function update_essay(Request $request)
+    public function update_essay(Request $request,$kode)
     {
+        $delete_ujian = DetailEssay::where('kode',$kode)->delete();
+
+        $siswa = Siswa::where('kelas_id', $request->kelas)->get();
+        if ($siswa->count() == 0) {
+            return redirect('/guru/ujian_essay')->with('pesan', "
+                <script>
+                    swal({
+                        title: 'Error!',
+                        text: 'belum ada siswa di kelas tersebut!',
+                        type: 'error',
+                        padding: '2em'
+                    })
+                </script>
+            ")->withInput();
+        }
+
+        $ujian = [
+            'nama' => $request->nama,
+            'jenis' => 1,
+            'guru_id' => session('guru')->id,
+            'kelas_id' => $request->kelas,
+            'mapel_id' => $request->mapel,
+            'materi_id' => $request->materi,
+            'jam' => $request->jam,
+            'menit' => $request->menit,
+            'kunci_ujian' => 1,
+        ];
+
+        $detail_ujian = [];
+        $index = 0;
+        $nama_soal =  $request->soal;
+        foreach ($nama_soal as $soal) {
+            array_push($detail_ujian, [
+                'kode' => $kode,
+                'soal' => $soal
+            ]);
+
+            $index++;
+        }
+
+        Ujian::where('kode',$kode)->update($ujian);
+        DetailEssay::insert($detail_ujian);
+
+
         return redirect('/guru/ujian')->with('pesan', "
         <script>
             swal({
