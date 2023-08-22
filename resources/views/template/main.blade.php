@@ -102,16 +102,16 @@
                         <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span data-feather="bell"></span>
-                            @if ($notif_tugas->count() > 0 || $notif_materi->count() > 0 || $notif_ujian->count() > 0)
+                            @if ($notif_tugas->count() > 0 )
                                 <span class="badge badge-danger"></span>
                             @endif
                         </a>
                         <div class="dropdown-menu position-absolute animated fadeInUp"
                             aria-labelledby="notificationDropdown">
                             <div class="notification-scroll">
-                                @if ($notif_tugas->count() > 0 || $notif_materi->count() > 0 || $notif_ujian->count() > 0)
+                                @if ($notif_tugas->count() > 0 )
 
-                                    @foreach ($notif_materi as $nm)
+                                    {{-- @foreach ($notif_materi as $nm)
                                         <a href="{{ url('/siswa/materi/' . $nm->kode) }}">
                                             <div class="dropdown-item">
                                                 <div class="media server-log">
@@ -125,10 +125,10 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    @endforeach
+                                    @endforeach --}}
 
                                     @foreach ($notif_tugas as $nt)
-                                        <a href="{{ url('/siswa/tugas/' . $nt->kode) }}">
+                                        <a href="{{ url('/siswa/belajar/' . $nt->kode) }}">
                                             <div class="dropdown-item">
                                                 <div class="media">
                                                     <span data-feather="file-text"></span>
@@ -143,8 +143,8 @@
                                         </a>
                                     @endforeach
 
-                                    @foreach ($notif_ujian as $nu)
-                                        <a href="{{ url('/siswa/ujian/' . $nu->kode) }}">
+                                    {{-- @foreach ($notif_ujian as $nu)
+                                        <a href="{{ url('/siswa/belajar/' . $nu->kode) }}">
                                             <div class="dropdown-item">
                                                 <div class="media file-upload">
                                                     <span data-feather="cast"></span>
@@ -157,7 +157,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    @endforeach
+                                    @endforeach --}}
                                 @else
                                     <div class="dropdown-item">
                                         <div class="media server-log">

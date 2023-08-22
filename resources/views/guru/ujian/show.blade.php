@@ -250,7 +250,7 @@
                                                             @if ($s->selesai == null)
                                                                 <tr class="text-center">
                                                                     <td>{{ $s->siswa->nama_siswa }}</td>
-                                                                    <td colspan="4">Belum Mengerjakan Tugas</td>
+                                                                    <td colspan="5">Belum Mengerjakan Tugas</td>
                                                                 </tr>
                                                             @else
                                                             @php
@@ -276,7 +276,12 @@
                                                                     <td>{{ $benar }}</td>
                                                                     <td>{{ $salah }}</td>
                                                                     <td>{{ $tidakDijawab }}</td>
+                                                                    @if ($benar == 0 && $salah == 0)
+                                                                        <td>0</td>
+                                                                    @else
                                                                     <td>{{ ($benar/($benar+$salah)*100) }}</td>
+                                                                    @endif
+                                                                    
                                                                     <td class="d-flex justify-content-center">
                                                                         <a href="{{ url("/guru/ujian/" . $ujian->kode . "/" . $s->siswa->id) }}" class="btn btn-info btn-sm"><span data-feather="eye"></span></a>
 

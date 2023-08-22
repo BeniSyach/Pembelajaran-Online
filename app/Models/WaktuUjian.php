@@ -38,4 +38,10 @@ class WaktuUjian extends Model
     {
         return $this->hasMany(EssaySiswa::class, 'siswa_id', 'siswa_id');
     }
+
+    // // Relasi ke belajar 
+    // public function belajar()
+    // {
+    //     return $this->hasMany(KmMateri::class);
+    // }
 }

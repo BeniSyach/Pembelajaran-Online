@@ -146,6 +146,27 @@ class BelajarSiswaController extends Controller
             {
                 $kode_ujian = Ujian::where('materi_id',$belajar->id)->first();
 
+                $waktu_selesai_ujian = WaktuUjian::where('siswa_id', session('siswa')->id)
+                ->where('kode', $kode_ujian->kode)
+                ->first();
+
+                $get_id_soal_pg = DetailUjian::where('kode',$kode_ujian->kode)->get();
+                // dd($get_id_soal_pg);
+                foreach($get_id_soal_pg as $id_soal_pg)
+                {
+                    $check_pg_siswa = is_null(PgSiswa::where('siswa_id',session('siswa')->id)->where('kode', $id_soal_pg->kode)->where('detail_ujian_id',$id_soal_pg->id)->first());
+                    // var_dump(dd($check_pg_siswa));
+                    if($check_pg_siswa == true)
+                    {
+                        if($waktu_selesai_ujian->selesai != 1)
+                        {
+                            // dd($waktu_selesai_ujian->selesai);
+                            PgSiswa::where('kode',$kode_ujian->kode)->delete();
+                        }
+                    }
+                   
+                }
+
                 $ambil_notif_ujian = is_null(WaktuUjian::where('siswa_id', session('siswa')->id)
                 ->where('kode', $kode_ujian->kode)
                 ->first());

@@ -15,60 +15,61 @@
                         </div>
 
                         <div class="widget-content">
-                            @if ($notif_tugas->count() > 0)
-                        {{-- {{ dd($notif_tugas) }} --}}
-                                @foreach ($notif_tugas as $ts)
-                                    {{-- <a href="{{ url('/siswa/tugas/' . $ts->kode) }}"> --}}
-                                        <div class="transactions-list mt-1">
-                                            <div class="t-item">
-                                                <div class="t-company-name">
-                                                    <div class="t-icon">
-                                                        <div class="icon">
-                                                            <svg viewBox="0 0 24 24" width="24" height="24"
-                                                                stroke="currentColor" stroke-width="2" fill="none"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="css-i6dzq1">
-                                                                <path
-                                                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
-                                                                </path>
-                                                                <polyline points="14 2 14 8 20 8"></polyline>
-                                                                <line x1="16" y1="13" x2="8"
-                                                                    y2="13"></line>
-                                                                <line x1="16" y1="17" x2="8"
-                                                                    y2="17"></line>
-                                                                <polyline points="10 9 9 9 8 9"></polyline>
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="t-name">
-                                                        
-                                                        {{-- <h4>{{ $ts->tugas->nama_tugas }}</h4>
-                                                        <p class="meta-date">{{ $ts->tugas->nama_tugas }}</p> --}}
+                            @if ($notif_ujian->count() > 0)
+                            @foreach ($notif_ujian as $nu)
+                            @if ($nu->ujian->jenis === 0)
+                                {{-- <a href="{{ url('/siswa/belajar/' . $nu->belajar->kode) }}"> --}}
+                                    <div class="transactions-list mt-1">
+                                        <div class="t-item">
+                                            <div class="t-company-name">
+                                                <div class="t-icon">
+                                                    <div class="icon">
+                                                        <span data-feather="cast"></span>
                                                     </div>
                                                 </div>
-                                                <div class="t-rate rate-dec">
-                                                    <p>
-                                                        <span>Due Date</span><br>
-                                                        {{-- <span>{{ $ts->tugas->due_date }}</span> --}}
-                                                    </p>
+                                                <div class="t-name">
+                                                    <h4>{{ $nu->ujian->nama }}</h4>
+                                                    <p class="meta-date">{{ $nu->ujian->mapel->nama_mapel }}</p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    {{-- </a> --}}
-                                @endforeach
-                            @else
-                                <div class="transactions-list" style="background: #b9eabb; border: 2px dashed #45c849;">
-                                    <div class="t-item">
-                                        <div class="t-company-name">
-                                            <div class="t-name">
-                                                <h4 style="color: #45c849;"> Belum Ada Tugas
-                                                    <span data-feather="smile"></span>
-                                                </h4>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                {{-- </a> --}}
+                            @else
+                                {{-- <a href="{{ url('/siswa/belajar/' . $nu->kode) }}"> --}}
+                                    <div class="transactions-list mt-1">
+                                        <div class="t-item">
+                                            <div class="t-company-name">
+                                                <div class="t-icon">
+                                                    <div class="icon">
+                                                        <span data-feather="cast"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="t-name">
+                                                    <h4>{{ $nu->ujian->nama }}</h4>
+                                                    <p class="meta-date">{{ $nu->ujian->mapel->nama_mapel }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{-- </a> --}}
                             @endif
+                                
+                            @endforeach
+                        @else
+                            <div class="transactions-list"
+                                style="background: hsl(355, 82%, 85%); border: 2px dashed #e7515a;">
+                                <div class="t-item">
+                                    <div class="t-company-name">
+                                        <div class="t-name">
+                                            <h4 style="color: #e7515a;"> Tidak ada Tugas
+                                                <span data-feather="smile"></span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif  
                         </div>
                     </div>
                 </div>

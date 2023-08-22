@@ -446,7 +446,11 @@
                                     Benar : <span class="badge badge-success mr-1">{{ $benar }}</span>  
                                     Salah : <span class="badge badge-danger mr-1">{{ $salah }}</span> 
                                     Tidak dijawab : <span class="badge btn-white">{{ $tidakDijawab }}</span>
+                                    @if ($benar == 0 && $salah == 0)
+                                    Nilai : <span class="badge btn-info"> 0 </span>
+                                    @else
                                     Nilai : <span class="badge btn-info"> {{ ($benar/($benar+$salah)*100) }} </span>
+                                    @endif
                                 </div>
 
                             </div>
