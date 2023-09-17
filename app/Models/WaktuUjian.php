@@ -16,6 +16,8 @@ class WaktuUjian extends Model
 
     protected $with = ['siswa', 'ujian', 'pgsiswa'];
 
+    const CREATED_AT = 'waktu_berakhir';
+
     // Relasi Ke siswa
     public function siswa()
     {

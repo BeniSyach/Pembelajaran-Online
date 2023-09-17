@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="widget-heading">
-                                    <h5 class="">Materi</h5>
+                                    <h5 class="">Absen Siswa</h5>
                                 </div>
                                 <div class="table-responsive" style="overflow-x: scroll;">
                                     <table id="datatable-table" class="table text-center text-nowrap">

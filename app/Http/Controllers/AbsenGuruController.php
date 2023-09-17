@@ -100,7 +100,7 @@ class AbsenGuruController extends Controller
        
 
         return view('guru.absen.absen_siswa', [
-            'title' => 'Absen',
+            'title' => 'Absen Siswa',
             'plugin' => '
                 <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/datatables.css">
                 <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/dt-global_style.css">
@@ -121,7 +121,7 @@ class AbsenGuruController extends Controller
     {
 
         return view('guru.absen.detail_absen_siswa', [
-            'title' => 'Absen',
+            'title' => 'Absen Siswa',
             'plugin' => '
                 <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/datatables.css">
                 <link rel="stylesheet" type="text/css" href="' . url("/assets/backend") . '/plugins/table/datatable/dt-global_style.css">
@@ -132,8 +132,9 @@ class AbsenGuruController extends Controller
                 'menu' => 'absen_siswa',
                 'expanded' => 'absen_siswa'
             ],
+            
             'guru' => Guru::firstWhere('id', session('guru')->id),
-            'data' => AbsenSiswa_Model::where('kelas_id',$id)->get()
+            'data' => AbsenSiswa_Model::where('kelas_id',$id)->orderBy('created_at', 'DESC')->get()
         ]);
     }
 }

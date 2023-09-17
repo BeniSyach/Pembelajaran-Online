@@ -167,6 +167,7 @@
                     <div class="col-lg-9">
                         <form id="examwizard-question" action="{{ url("/siswa/belajar") }}" method="POST">
                             @csrf
+                            <input type="hidden" name="kode_belajar" value="{{ $materi->kode }}">
                             <input type="hidden" name="kode" value="{{ $ujian->kode }}">
                             <div class="widget shadow p-2">
                                 <div>
@@ -559,6 +560,7 @@
                         <div class="col-lg-9">
                             <form id="examwizard-question_essay" action="{{ url("/siswa/belajar_essay") }}" method="POST">
                                 @csrf
+                                <input type="hidden" name="kode_belajar" value="{{ $materi->kode }}">
                                 <input type="hidden" name="kode" value="{{ $ujian_essay->kode }}">
                                 <div class="widget shadow p-2">
                                     <div>
@@ -703,6 +705,7 @@
                         <div class="col-lg-9">
                             <form id="examwizard-question" action="javascript:void(0);" method="POST">
                                 @csrf
+                                <input type="hidden" name="kode_belajar" value="{{ $materi->kode }}">
                                 <input type="hidden" name="kode" value="{{ $ujian_essay->kode }}">
                                 <div class="widget shadow p-2">
                                     <div class="d-flex float-right">

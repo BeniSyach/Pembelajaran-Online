@@ -437,7 +437,6 @@ class UjianGuruController extends Controller
 
     public function ulangi_pg_siswa($kode,$siswa_id)
     {
-
         $hapus_pg_siswa = PgSiswa::where('kode',$kode)->where('siswa_id', $siswa_id)->delete();
         $data = [
             'waktu_berakhir' => null,
@@ -671,6 +670,13 @@ class UjianGuruController extends Controller
 
         Ujian::where('kode',$kode)->update($ujian);
         DetailUjian::insert($detail_ujian);
+
+        PgSiswa::where('kode', $kode)->delete();
+
+        WaktuUjian::where('kode',$kode)->update([
+            'waktu_berakhir' => null ,
+            'selesai' => null
+        ]);
 
         return redirect('/guru/ujian')->with('pesan', "
         <script>

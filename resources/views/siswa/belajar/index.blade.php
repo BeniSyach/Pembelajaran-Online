@@ -14,7 +14,7 @@
                                     <h5 class="">Data Materi Pelajaran</h5>
                                 </div>
                                 <div class="table-responsive" style="overflow-x: scroll;">
-                                    <table id="datatable-table" class="table text-center text-nowrap">
+                                    <table id="datatable-table" class="table text-center text-wrap">
                                         <thead>
                                             <tr>
                                                 <th>Nama</th>

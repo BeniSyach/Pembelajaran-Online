@@ -242,6 +242,7 @@
                                                             <th>Salah</th>
                                                             <th>Tidak Dijawab</th>
                                                             <th>Nilai</th>
+                                                            <th>Waktu Ujian</th>
                                                             <th>opsi</th>
                                                         </tr>
                                                     </thead>
@@ -250,7 +251,7 @@
                                                             @if ($s->selesai == null)
                                                                 <tr class="text-center">
                                                                     <td>{{ $s->siswa->nama_siswa }}</td>
-                                                                    <td colspan="5">Belum Mengerjakan Tugas</td>
+                                                                    <td colspan="6">Belum Mengerjakan Tugas</td>
                                                                 </tr>
                                                             @else
                                                             @php
@@ -281,12 +282,13 @@
                                                                     @else
                                                                     <td>{{ ($benar/($benar+$salah)*100) }}</td>
                                                                     @endif
+                                                                    <td> {{date('d-m-Y H:i:s',strtotime($s->waktu_berakhir)) }} </td>
                                                                     
                                                                     <td class="d-flex justify-content-center">
                                                                         <a href="{{ url("/guru/ujian/" . $ujian->kode . "/" . $s->siswa->id) }}" class="btn btn-info btn-sm"><span data-feather="eye"></span></a>
 
-                                                                        <form id="ulangi_pg_siswa" action="{{ url("/guru/ujian_pg/" . $ujian->kode . "/" . $s->siswa->id) }}" method="get">
-                                                                        <a href="#" class="btn btn-warning btn-sm ulangi"><span data-feather="refresh-cw"></span></a>
+                                                                        <form id="ulangi_pg_siswa{{$s->siswa->id}}" action="{{ url("/guru/ujian_pg/" . $ujian->kode . "/" . $s->siswa->id) }}" method="get">
+                                                                        <a href="#" class="btn btn-warning btn-sm ulangi{{$s->siswa->id}}"><span data-feather="refresh-cw"></span></a>
                                                                         </form>
                                                                     </td>
                                                                 </tr> 
@@ -313,7 +315,9 @@
     </div>
 
     <script>
-         $(".ulangi").on("click",function(a){a.preventDefault(),swal({title:"Ulangi Tugas Siswa ?",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:" ya, ulangi",padding:"2em"}).then(function(a){a.value&&$("#ulangi_pg_siswa").submit()})});
+        @foreach ($ujian->waktuujian as $s)
+         $(".ulangi{{$s->siswa->id}}").on("click",function(a){a.preventDefault(),swal({title:"Ulangi Tugas Siswa ?",type:"warning",showCancelButton:!0,cancelButtonText:"tidak",confirmButtonText:" ya, ulangi",padding:"2em"}).then(function(a){a.value&&$("#ulangi_pg_siswa{{$s->siswa->id}}").submit()})});
+         @endforeach
     </script>
     <!--  END CONTENT AREA  -->
     {!! session('pesan') !!}

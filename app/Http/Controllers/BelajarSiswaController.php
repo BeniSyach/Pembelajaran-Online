@@ -73,14 +73,9 @@ class BelajarSiswaController extends Controller
     {
         WaktuUjian::where('kode', $request->kode)
             ->where('siswa_id', session('siswa')->id)
-            ->update(['selesai' => 1]);
+            ->update(['selesai' => 1,'waktu_berakhir' => now()]);
 
-            $get_id_kelas =  Siswa::where('id',session('siswa')->id)->first();
-            $id_kelas = $get_id_kelas['kelas_id'];
-    
-           $kode_materi =  KmMateri::where('kelas_id',$id_kelas)->first();
-
-        return redirect('/siswa/belajar/' . $kode_materi['kode'])->with('pesan', "
+        return redirect('/siswa/belajar/' . $request->kode_belajar)->with('pesan', "
             <script>
                 swal({
                     title: 'Success!',
@@ -97,13 +92,7 @@ class BelajarSiswaController extends Controller
             ->where('siswa_id', session('siswa')->id)
             ->update(['selesai' => 1]);
 
-        $get_id_kelas =  Siswa::where('id',session('siswa')->id)->first();
-        $id_kelas = $get_id_kelas['kelas_id'];
-
-       $kode_materi =  KmMateri::where('kelas_id',$id_kelas)->first();
-       
-
-       return redirect('/siswa/belajar/' . $kode_materi['kode'])->with('pesan', "
+       return redirect('/siswa/belajar/' . $request->kode_belajar)->with('pesan', "
        <script>
            swal({
                title: 'Success!',
@@ -149,23 +138,6 @@ class BelajarSiswaController extends Controller
                 $waktu_selesai_ujian = WaktuUjian::where('siswa_id', session('siswa')->id)
                 ->where('kode', $kode_ujian->kode)
                 ->first();
-
-                $get_id_soal_pg = DetailUjian::where('kode',$kode_ujian->kode)->get();
-                // dd($get_id_soal_pg);
-                foreach($get_id_soal_pg as $id_soal_pg)
-                {
-                    $check_pg_siswa = is_null(PgSiswa::where('siswa_id',session('siswa')->id)->where('kode', $id_soal_pg->kode)->where('detail_ujian_id',$id_soal_pg->id)->first());
-                    // var_dump(dd($check_pg_siswa));
-                    if($check_pg_siswa == true)
-                    {
-                        if($waktu_selesai_ujian->selesai != 1)
-                        {
-                            // dd($waktu_selesai_ujian->selesai);
-                            PgSiswa::where('kode',$kode_ujian->kode)->delete();
-                        }
-                    }
-                   
-                }
 
                 $ambil_notif_ujian = is_null(WaktuUjian::where('siswa_id', session('siswa')->id)
                 ->where('kode', $kode_ujian->kode)
@@ -224,15 +196,9 @@ class BelajarSiswaController extends Controller
                 }
         
         
-                $timestamp = strtotime(date('Y-m-d G:i', time()));
-                $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
+                $timestamp = strtotime(date('Y-m-d H:i:s', time()));
+                $waktu_berakhir =  date('Y-m-d H:i:s', strtotime("+$ujian->jam hour +$ujian->menit minute", $timestamp));
         
-                $data_waktu_ujian = [
-                    'waktu_berakhir' => $waktu_berakhir
-                ];
-                WaktuUjian::where('kode', $ujian->kode)
-                    ->where('siswa_id', session('siswa')->id)
-                    ->update($data_waktu_ujian);
         
                 PgSiswa::insert($soal_pg_siswa);
             }
@@ -240,6 +206,7 @@ class BelajarSiswaController extends Controller
             $waktu_ujian = WaktuUjian::where('kode', $ujian->kode)
                 ->where('siswa_id', session('siswa')->id)
                 ->first();
+                
             $pg_siswa = PgSiswa::where('kode', $ujian->kode)
                 ->where('siswa_id', session('siswa')->id)
                 ->get(); 
@@ -267,12 +234,6 @@ class BelajarSiswaController extends Controller
                 }
                 $timestamp = strtotime(date('Y-m-d G:i', time()));
                 $waktu_berakhir =  date('Y-m-d G:i', strtotime("+$ujian_essay->jam hour +$ujian_essay->menit minute", $timestamp));
-                $data_waktu_ujian = [
-                    'waktu_berakhir' => $waktu_berakhir
-                ];
-                WaktuUjian::where('kode', $ujian_essay->kode)
-                    ->where('siswa_id', session('siswa')->id)
-                    ->update($data_waktu_ujian);
     
                 EssaySiswa::insert($data_essay_siswa);
             }

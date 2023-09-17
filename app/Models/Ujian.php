@@ -12,6 +12,8 @@ class Ujian extends Model
     protected $guarded = ['id'];
     protected $with = ['detailujian'];
 
+    
+
     // Relasi Ke Guru
     public function guru()
     {
