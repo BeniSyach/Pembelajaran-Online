@@ -46,7 +46,8 @@ class BelajarSiswaController extends Controller
                 'expanded' => 'belajar'
             ],
             'siswa' => Siswa::firstWhere('id', session('siswa')->id),
-            'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->get(),
+            'materi' => Materi::where('kelas_id', session('siswa')->kelas_id)->orderBy('mapel_id', 'ASC')
+            ->orderBy('id', 'ASC')->get(),
             'notif_tugas' => $notif_tugas,
             'notif_materi' => Notifikasi::where('siswa_id', session('siswa')->id)->get(),
             'notif_ujian' => $notif_ujian

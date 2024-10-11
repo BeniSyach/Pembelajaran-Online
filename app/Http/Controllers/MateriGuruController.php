@@ -41,7 +41,7 @@ class MateriGuruController extends Controller
                 'expanded' => 'materi'
             ],
             'guru' => Guru::firstWhere('id', session('guru')->id),
-            'materi' => KmMateri::where('guru_id', session('guru')->id)->get()
+            'materi' => KmMateri::where('guru_id', session('guru')->id)->orderBy('mapel_id', 'ASC')->orderBy('id', 'ASC')->get()
         ]);
     }
 

@@ -146,7 +146,7 @@
                 <div class="form-container">
                     <div class="form-content">
                         <h1 class="">Daftar Akun<br /><span class="brand-name">E-MesraMedia</span></h1>
-                        <p class="signup-link">Sudah punya akun? <a href="{{ url("/") }}">Log in</a></p>
+                        <p class="signup-link">Sudah punya akun? <a href="{{ url("/login") }}">Log in</a></p>
                         <form action="{{ url("/register") }}" method="POST" class="text-left" id="myform">
                             @csrf
                             <div class="form">

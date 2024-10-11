@@ -46,7 +46,7 @@ class UjianGuruController extends Controller
                 'expanded' => 'ujian'
             ],
             'guru' => Guru::firstWhere('id', session('guru')->id),
-            'ujian' => Ujian::where('guru_id', session('guru')->id)->get()
+            'ujian' => Ujian::where('guru_id', session('guru')->id)->orderBy('mapel_id', 'ASC')->orderBy('id', 'ASC')->get()
         ]);
     }
 
@@ -204,6 +204,7 @@ class UjianGuruController extends Controller
             </script>
         ");
     }
+    
     public function pg_excel(Request $request)
     {
         $pg_tugas = Ujian::where('materi_id',$request->e_materi)->where('jenis',0)->get();
@@ -621,8 +622,6 @@ class UjianGuruController extends Controller
     public function update_pg(Request $request, $kode)
     {
 
-        $delete_ujian = DetailUjian::where('kode',$kode)->delete();
-
         $siswa = Siswa::where('kelas_id', $request->kelas)->get();
         if ($siswa->count() == 0) {
             return redirect('/guru/ujian/create')->with('pesan', "
@@ -646,37 +645,37 @@ class UjianGuruController extends Controller
             'materi_id' => $request->materi,
             'jam' => $request->jam,
             'menit' => $request->menit,
-            'acak' => $request->acak ,
-            'kunci_ujian' => 1,
+            'acak' => $request->acak
         ];
 
-        $detail_ujian = [];
-        $index = 0;
-        $nama_soal =  $request->soal;
-        foreach ($nama_soal as $soal) {
-            array_push($detail_ujian, [
-                'kode' => $kode,
-                'soal' => $soal,
-                'pg_1' => 'A. ' . $request->pg_1[$index],
-                'pg_2' => 'B. ' . $request->pg_2[$index],
-                'pg_3' => 'C. ' . $request->pg_3[$index],
-                'pg_4' => 'D. ' . $request->pg_4[$index],
-                // 'pg_5' => 'E. ' . $request->pg_5[$index],
-                'jawaban' => $request->jawaban[$index]
-            ]);
-
-            $index++;
-        }
-
         Ujian::where('kode',$kode)->update($ujian);
-        DetailUjian::insert($detail_ujian);
 
-        PgSiswa::where('kode', $kode)->delete();
+        return redirect('/guru/ujian')->with('pesan', "
+        <script>
+            swal({
+                title: 'Success!',
+                text: 'Tugas pilihan Ganda berhasil di Edit!',
+                type: 'success',
+                padding: '2em'
+            })
+        </script>
+    ");
+    }
 
-        WaktuUjian::where('kode',$kode)->update([
-            'waktu_berakhir' => null ,
-            'selesai' => null
-        ]);
+
+    public function soal_update_pg(Request $request, $id)
+    {
+        $detail_ujian = [
+                'soal' => $request->soal,
+                'pg_1' => 'A. ' . $request->pg_1,
+                'pg_2' => 'B. ' . $request->pg_2,
+                'pg_3' => 'C. ' . $request->pg_3,
+                'pg_4' => 'D. ' . $request->pg_4,
+                // 'pg_5' => 'E. ' . $request->pg_5,
+                'jawaban' => $request->jawaban,
+        ];
+
+        DetailUjian::where('id',$id)->update($detail_ujian);
 
         return redirect('/guru/ujian')->with('pesan', "
         <script>
